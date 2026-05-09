@@ -8,90 +8,94 @@ export default function PortfolioSlide() {
     { 
       name: "Savoir Studio", 
       url: "https://www.ssbykmw.com/", 
-      desc: "A premium lifestyle and aesthetic brand offering curated luxury experiences.",
+      desc: "Built the full-service content production arm for Karn Marketing Warfare from scratch. Live operational infrastructure.",
       c: colors.karn.blue,
-      status: "Live"
+      status: "STUDIO INCEPTION • LIVE"
     },
     { 
-      name: "Casuall", 
+      name: "Casuall.in", 
       url: "https://casuall.in/", 
-      desc: "Modern apparel focusing on everyday comfort without compromising on distinct style.",
+      desc: "Modern apparel focusing on everyday comfort without compromising on distinct style. E-commerce rollout.",
       c: colors.karn.red,
-      status: "Live"
-    },
-    { 
-      name: "DBN", 
-      url: "https://icretepixels.vercel.app/", 
-      desc: "Next-generation digital infrastructure for scalable enterprise deployment.",
-      c: colors.karn.yellow,
-      status: "Under Development"
+      status: "D2C APPAREL • LIVE"
     },
     { 
       name: "Tech Ev", 
       url: "https://candid-pegasus-1f86d2.netlify.app/#/", 
-      desc: "Innovative electric vehicle solutions paving the way for sustainable mobility.",
+      desc: "Designed the digital launch strategy and high-performance UI structure for a new EV scooter brand. Live site.",
       c: colors.karn.green,
-      status: "Under Development"
+      status: "ELECTRIC MOBILITY • LIVE"
+    },
+    { 
+      name: "DBN", 
+      url: "https://icretepixels.vercel.app/", 
+      desc: "Complete brand launch for premium Alphonso mango distribution. Covers naming, packaging, and digital.",
+      c: colors.karn.yellow,
+      status: "PREMIUM D2C • LIVE"
     }
   ];
 
   return (
-    <div className="flex flex-col items-center justify-center w-full min-h-[80vh] relative z-10 px-4">
-      <div className="mb-16 text-center w-full max-w-4xl">
-        <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} className="flex items-center justify-center gap-3 mb-6">
+    <div className="flex flex-col w-full min-h-[80vh] relative z-10 py-12">
+      <div className="mb-12">
+        <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="flex items-center gap-3 mb-6">
            <div className="w-8 h-[2px] bg-white/20"></div>
            <p className="font-heading text-white/50 text-xs tracking-[0.3em] uppercase">KARN Portfolio</p>
-           <div className="w-8 h-[2px] bg-white/20"></div>
         </motion.div>
         
         <motion.h2 
-           initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ delay: 0.1 }}
-           className="text-5xl md:text-7xl font-heading font-light leading-tight tracking-tight mb-6"
+           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.1 }}
+           className="text-5xl md:text-7xl font-heading font-light leading-tight tracking-tight mb-4"
         >
           Brands We've <br />
           <span className="font-medium text-white">Successfully Built</span>
         </motion.h2>
-        
-        <motion.p 
-           initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} transition={{ delay: 0.2 }}
-           className="text-white/50 text-lg max-w-2xl mx-auto"
-        >
-          A selection of proprietary brands engineered from the ground up by KARN Marketing Warfare.
-        </motion.p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-8 w-full max-w-6xl">
-        {portfolios.map((item, i) => (
-          <motion.a 
-            href={item.url}
-            target="_blank"
-            rel="noopener noreferrer"
-            key={i}
-            initial={{ opacity: 0, y: 30 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            transition={{ delay: 0.1 * i, duration: 0.6 }}
-            className="glass-panel p-10 rounded-[2.5rem] border border-white/5 group hover:border-white/20 transition-all block relative overflow-hidden shadow-2xl cursor-pointer min-h-[250px]"
-          >
-            <div className="absolute top-0 right-0 w-64 h-64 opacity-5 group-hover:opacity-15 blur-[50px] transition-all duration-700 pointer-events-none rounded-bl-full" style={{ backgroundColor: item.c }}></div>
-            
-            <div className="relative z-10 flex flex-col h-full justify-between">
-              <div>
-                <div className="flex items-start justify-between mb-6">
-                  <h3 className="text-3xl font-heading font-medium text-white group-hover:text-white/90 transition-colors">{item.name}</h3>
-                  <div className="w-10 h-10 rounded-full glass-panel flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all duration-300 transform translate-x-4 group-hover:translate-x-0 border-white/10">
-                    <ExternalLink size={18} className="text-white" />
-                  </div>
+      <div className="w-full pb-8">
+        <div className="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+          {portfolios.map((item, i) => (
+            <motion.a 
+              href={item.url}
+              target="_blank"
+              rel="noopener noreferrer"
+              key={i}
+              initial={{ opacity: 0, y: 30 }}
+              whileInView={{ opacity: 1, y: 0 }}
+              transition={{ delay: 0.1 * i, duration: 0.6 }}
+              viewport={{ once: true }}
+              className="w-full rounded-[2.5rem] bg-[#0c0c0e] border border-white/5 group hover:border-white/20 transition-all block relative overflow-hidden shadow-2xl"
+            >
+              <div className="h-[280px] w-full relative overflow-hidden border-b border-white/10 bg-white/5">
+                {/* Live Preview via Iframe Scale hack. Fallback to image if iframe fails */}
+                <div className="absolute top-0 left-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500">
+                   <iframe src={item.url} className="w-full h-full border-none bg-white" loading="lazy" title={item.name} />
                 </div>
-                <p className="text-white/60 text-base leading-relaxed mb-8 max-w-sm">{item.desc}</p>
-              </div>
+                
+                {/* Overlay Gradient to blend edges */}
+                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0e] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                
+                {/* Overlay Badge */}
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black-matte/80 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full z-20">
+                   <span className="text-[10px] font-heading uppercase tracking-[0.2em] text-white/90">{item.status}</span>
+                </div>
 
-              <div className="flex items-center justify-between">
-                <span className="text-sm font-mono tracking-wider" style={{ color: item.c }}>{item.status}</span>
-                <span className="text-xs uppercase tracking-widest text-white/30 group-hover:text-white/60 transition-colors">Live Preview</span>
+                {/* Hover Reveal Explore */}
+                <div className="absolute inset-0 bg-[#0c0c0e]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center z-10">
+                    <div className="w-16 h-16 rounded-full bg-white text-black-matte flex items-center justify-center mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">
+                      <ExternalLink size={24} />
+                    </div>
+                    <span className="text-white font-heading tracking-[0.2em] text-xs uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Explore Launch Site</span>
+                </div>
               </div>
-            </div>
-          </motion.a>
-        ))}
+              
+              <div className="p-8">
+                <h3 className="text-4xl font-serif text-white mb-4 tracking-tight">{item.name}</h3>
+                <p className="text-white/50 text-[15px] leading-relaxed">{item.desc}</p>
+              </div>
+            </motion.a>
+          ))}
+        </div>
       </div>
     </div>
   );

@@ -11,7 +11,13 @@ export const images = {
   team: 'https://images.unsplash.com/photo-1552664730-d307ca884978?q=80&w=2940&auto=format&fit=crop',
   billboard: 'https://images.unsplash.com/photo-1542204637-e67bc7d41e48?q=80&w=2874&auto=format&fit=crop',
   social: 'https://images.unsplash.com/photo-1611162617474-5b21e879e113?q=80&w=2874&auto=format&fit=crop',
-  pour: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=2874&auto=format&fit=crop'
+  pour: 'https://images.unsplash.com/photo-1498804103079-a6351b050096?q=80&w=2874&auto=format&fit=crop',
+  portfolio: {
+    savoir: 'https://images.unsplash.com/photo-1598488035139-bdbb2231ce04?q=80&w=2940&auto=format&fit=crop',
+    casuall: 'https://images.unsplash.com/photo-1523381210434-271e8be1f52b?q=80&w=2940&auto=format&fit=crop',
+    dbn: 'https://images.unsplash.com/photo-1553270921-26c710d297d0?q=80&w=2940&auto=format&fit=crop',
+    techev: 'https://images.unsplash.com/photo-1581293739773-1f1f2e46bc1e?q=80&w=2940&auto=format&fit=crop'
+  }
 };
 
 export const colors = {
