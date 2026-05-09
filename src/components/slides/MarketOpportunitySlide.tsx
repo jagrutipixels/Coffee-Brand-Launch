@@ -7,8 +7,8 @@ export default function MarketOpportunitySlide() {
     <div className="w-full h-full flex flex-col justify-center py-12 relative z-10">
       <div className="mb-16">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false }} className="flex items-center gap-4 mb-4">
-           <div className="w-8 h-[2px] bg-gold"></div>
-           <p className="font-heading text-gold text-xs tracking-[0.3em] uppercase">Market Opportunity</p>
+           <div className="w-8 h-[2px] bg-karn-yellow"></div>
+           <p className="font-heading text-karn-yellow text-xs tracking-[0.3em] uppercase">Market Opportunity</p>
         </motion.div>
         <motion.h2 
            initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }}

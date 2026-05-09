@@ -41,7 +41,7 @@ export default function CoverSlide() {
            initial={{ opacity: 0, width: 0 }}
            animate={{ opacity: 1, width: '4rem' }}
            transition={{ duration: 1, delay: 0.2, ease: "easeInOut" }}
-           className="h-[2px] bg-gradient-to-r from-gold to-transparent mb-8"
+           className="h-[2px] bg-gradient-to-r from-karn-yellow to-transparent mb-8"
         />
         
         <div className="flex flex-col gap-2 mb-12 perspective-[1000px]">
@@ -61,7 +61,7 @@ export default function CoverSlide() {
           </div>
           <div className="flex gap-4 overflow-hidden py-2">
             {title3.map((word, i) => (
-              <motion.span custom={i + title1.length + title2.length} variants={textVariants} initial="hidden" animate="visible" key={i} className="text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-medium tracking-tight leading-[0.9] text-gold drop-shadow-lg">
+              <motion.span custom={i + title1.length + title2.length} variants={textVariants} initial="hidden" animate="visible" key={i} className="text-5xl md:text-7xl lg:text-[5.5rem] font-heading font-medium tracking-tight leading-[0.9] text-karn-yellow drop-shadow-[0_0_15px_rgba(234,179,8,0.3)]">
                 {word}
               </motion.span>
             ))}
@@ -85,7 +85,7 @@ export default function CoverSlide() {
         transition={{ duration: 1.5, delay: 0.5, ease: "easeOut" }}
         className="absolute top-1/2 -translate-y-1/2 right-0 w-[40vw] h-[80vh] border border-white/5 rounded-[4rem] backdrop-blur-sm z-10 glass-panel"
       >
-        <div className="absolute inset-10 border border-gold/10 rounded-[3rem]"></div>
+        <div className="absolute inset-10 border border-karn-yellow/10 rounded-[3rem]"></div>
       </motion.div>
 
       <motion.div 
@@ -93,7 +93,7 @@ export default function CoverSlide() {
          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-2 z-20"
       >
          <span className="text-[10px] uppercase tracking-widest text-white/30 font-mono">Scroll to explore</span>
-         <div className="w-[1px] h-12 bg-gradient-to-b from-gold to-transparent"></div>
+         <div className="w-[1px] h-12 bg-gradient-to-b from-karn-yellow to-transparent"></div>
       </motion.div>
     </div>
   );

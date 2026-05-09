@@ -1,14 +1,14 @@
 import React from 'react';
 import { motion } from 'motion/react';
-import { images } from '@/lib/constants';
+import { images, colors } from '@/lib/constants';
 
 export default function WebsiteSlide() {
   return (
     <div className="w-full h-full flex flex-col md:flex-row gap-20 items-center py-12">
       <div className="flex-1">
         <motion.div initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false, amount: 0.3 }} className="flex items-center gap-4 mb-6">
-           <div className="w-8 h-[2px] bg-gold"></div>
-           <p className="font-heading text-gold text-xs tracking-[0.3em] uppercase">Website Ecosystem</p>
+           <div className="w-8 h-[2px] bg-karn-blue"></div>
+           <p className="font-heading text-karn-blue text-xs tracking-[0.3em] uppercase">Website Ecosystem</p>
         </motion.div>
         
         <motion.h2 
@@ -23,12 +23,12 @@ export default function WebsiteSlide() {
         
         <div className="grid grid-cols-2 gap-x-8 gap-y-12">
            {[
-             { t: 'Website Structure', c: '#2563EB', desc: 'A hub designed for premium B2B conversion.' },
-             { t: 'Lead Gen System', c: '#DC2626', desc: 'Seamlessly capture institutional tier inquiries.' },
-             { t: 'Strategic Forms', c: '#EAB308', desc: 'Pre-qualifying questionnaires for high-volume orders.' },
-             { t: 'CRM Integration', c: '#16A34A', desc: 'Automated deal flow mapping in Hubspot/Salesforce.' },
-             { t: 'AI Chatbot', c: '#9333EA', desc: '24/7 global response capability.' },
-             { t: 'SEO Framework', c: '#D4AF37', desc: 'Built top-to-bottom for search supremacy.' },
+             { t: 'Website Structure', c: colors.karn.blue, desc: 'A hub designed for premium B2B conversion.' },
+             { t: 'Lead Gen System', c: colors.karn.red, desc: 'Seamlessly capture institutional tier inquiries.' },
+             { t: 'Strategic Forms', c: colors.karn.yellow, desc: 'Pre-qualifying questionnaires for high-volume orders.' },
+             { t: 'CRM Integration', c: colors.karn.green, desc: 'Automated deal flow mapping in Hubspot/Salesforce.' },
+             { t: 'AI Chatbot', c: colors.karn.purple, desc: '24/7 global response capability.' },
+             { t: 'SEO Framework', c: colors.karn.blue, desc: 'Built top-to-bottom for search supremacy.' },
            ].map((item, i) => (
              <motion.div 
                initial={{ opacity: 0, y: 20 }}
@@ -38,7 +38,7 @@ export default function WebsiteSlide() {
                key={i} 
                className="flex flex-col gap-2 relative group"
              >
-               <div className="absolute -left-5 top-2 w-1.5 h-1.5 rounded-full ring-2 ring-transparent group-hover:ring-white/30 transition-all font-mono" style={{ backgroundColor: item.c }}></div>
+               <div className="absolute -left-5 top-2 w-1.5 h-1.5 rounded-full ring-2 ring-transparent group-hover:ring-white/30 transition-all font-mono" style={{ backgroundColor: item.c, boxShadow: `0 0 10px ${item.c}` }}></div>
                <h4 className="text-xl font-medium text-white/90 group-hover:translate-x-1 transition-transform">{item.t}</h4>
                <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
              </motion.div>

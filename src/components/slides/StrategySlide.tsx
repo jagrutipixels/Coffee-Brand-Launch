@@ -32,7 +32,7 @@ export default function StrategySlide() {
 
       <div className="relative w-full max-w-7xl mx-auto flex flex-col gap-8 perspective-[1200px]">
         
-        <div className="flex justify-center gap-6 w-full">
+        <div className="flex flex-wrap justify-center gap-6 w-full">
           {steps.filter(s => s.row === 1).map((step, idx) => (
             <motion.div 
               key={idx}
@@ -52,7 +52,7 @@ export default function StrategySlide() {
           ))}
         </div>
 
-        <div className="flex justify-center gap-6 w-full px-12">
+        <div className="flex flex-wrap justify-center gap-6 w-full md:px-12">
           {steps.filter(s => s.row === 2).map((step, idx) => (
             <motion.div 
               key={idx + 4}
@@ -72,7 +72,7 @@ export default function StrategySlide() {
           ))}
         </div>
 
-        <div className="flex justify-center gap-6 w-full px-24">
+        <div className="flex flex-wrap justify-center gap-6 w-full md:px-24">
           {steps.filter(s => s.row === 3).map((step, idx) => (
             <motion.div 
               key={idx + 7}

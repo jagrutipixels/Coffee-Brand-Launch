@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import { motion, useScroll, useSpring } from 'motion/react';
+import { motion, useScroll, useSpring, useMotionValueEvent } from 'motion/react';
+import { ChevronUp } from 'lucide-react';
 import Lenis from '@studio-freight/lenis';
 import { cn } from '@/lib/utils';
 import CoverSlide from './slides/CoverSlide';
@@ -46,13 +47,26 @@ const sections = [
   { id: 'closing', Component: ClosingSlide },
 ];
 
+const navLinks = [
+  { label: 'Overview', id: 'summary' },
+  { label: 'Market', id: 'market' },
+  { label: 'Strategy', id: 'strategy' },
+  { label: 'Reporting', id: 'reporting' },
+  { label: 'Investment', id: 'investment' },
+];
+
 export default function Presentation() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
+  const [showScrollTop, setShowScrollTop] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
     damping: 30,
     restDelta: 0.001
+  });
+
+  useMotionValueEvent(scrollYProgress, "change", (latest) => {
+    setShowScrollTop(latest > 0.05);
   });
 
   useEffect(() => {
@@ -87,16 +101,36 @@ export default function Presentation() {
 
       {/* Progress Bar */}
       <motion.div
-        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-gold to-yellow-600 origin-left z-50 shadow-[0_0_15px_rgba(212,175,55,0.5)]"
+        className="fixed top-0 left-0 right-0 h-1 bg-gradient-to-r from-karn-yellow to-yellow-600 origin-left z-50 shadow-[0_0_15px_rgba(234,179,8,0.5)]"
         style={{ scaleX }}
       />
       
-      {/* Branding Sticky Left */}
-      <div className="fixed left-6 top-1/2 -translate-y-1/2 -rotate-90 origin-center pointer-events-none select-none flex items-center gap-4 z-50">
-        <span className="font-heading font-medium tracking-[0.25em] text-[10px] uppercase text-white/40">K.A.R.N.</span>
-        <div className="w-12 h-px bg-gradient-to-r from-transparent via-white/20 to-transparent"></div>
-        <span className="font-heading tracking-[0.2em] text-[10px] uppercase text-gold">Marketing Warfare LLP</span>
-      </div>
+      {/* Header Navigation */}
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-panel rounded-full px-8 py-4 hidden md:flex items-center gap-8 shadow-2xl border border-white/10">
+        <div className="mr-4 hidden lg:block">
+          <img src="https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/5faeae4bc9be9d970fddfab69431165052cfe4d8/KMW-White-01.png" alt="KARN Marketing Warfare" className="h-6 object-contain" />
+        </div>
+        {navLinks.map((link) => (
+           <button 
+             key={link.id} 
+             onClick={() => document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' })}
+             className="text-[10px] sm:text-xs uppercase tracking-widest text-white/50 hover:text-white hover:text-shadow-glow transition-all"
+           >
+             {link.label}
+           </button>
+        ))}
+      </header>
+      
+      {/* Go to Top Button */}
+      <motion.button 
+        initial={{ opacity: 0, scale: 0.8 }}
+        animate={{ opacity: showScrollTop ? 1 : 0, scale: showScrollTop ? 1 : 0.8 }}
+        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        className="fixed bottom-8 right-8 z-50 w-12 h-12 glass-panel rounded-full flex items-center justify-center hover:bg-white/10 transition-colors pointer-events-auto border border-white/10 shadow-lg group"
+        style={{ pointerEvents: showScrollTop ? 'auto' : 'none' }}
+      >
+        <ChevronUp size={20} className="text-white/60 group-hover:text-white transition-colors" />
+      </motion.button>
 
       {/* Content Container */}
       <main className="w-full flex flex-col items-center">
@@ -110,7 +144,7 @@ export default function Presentation() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.2 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full min-h-screen flex items-center justify-center px-10 md:px-24 py-24 relative"
+              className="w-full flex items-center justify-center px-6 md:px-12 lg:px-24 py-20 relative"
             >
               <div className="w-full max-w-[1400px]">
                 <SectionComponent />

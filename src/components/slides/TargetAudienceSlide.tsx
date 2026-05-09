@@ -1,39 +1,87 @@
 import React from 'react';
 import { motion } from 'motion/react';
+import { colors } from '@/lib/constants';
 
 export default function TargetAudienceSlide() {
-  const audiences = [
-    { title: 'Café Chains', color: '#2563EB' },
-    { title: 'Retail Coffee Brands', color: '#DC2626' },
-    { title: 'Hotels & Resorts', color: '#EAB308' },
-    { title: 'Hospitality Groups', color: '#16A34A' },
-    { title: 'Distributors', color: '#9333EA' },
-    { title: 'Private Label Businesses', color: '#D4AF37' },
-    { title: 'Export Buyers', color: '#ffffff' },
+  const tiers = [
+    {
+      tier: "Tier 1: Institutional Volume",
+      desc: "Massive scale contracts with focus on supply chain reliability.",
+      color: colors.karn.blue,
+      targets: [
+        { name: 'Global Distribution Networks', focus: 'Regional supply monopolies' },
+        { name: 'FMCG & Retail Giants', focus: 'High-volume contract manufacturing' },
+        { name: 'Multi-National HORECA', focus: 'Enterprise hotel & resort procurement' }
+      ]
+    },
+    {
+      tier: "Tier 2: Premium Recurring",
+      desc: "Consistent, standardized volume for brand-centric businesses.",
+      color: colors.karn.red,
+      targets: [
+        { name: 'Global Café Chains', focus: 'Consistent roasting standardization' },
+        { name: 'Premium DTC Brands', focus: 'High-margin private label' },
+        { name: 'Corporate Hospitality', focus: 'Volume with quality expectations' }
+      ]
+    },
+    {
+      tier: "Tier 3: Specialty Segments",
+      desc: "High-margin, niche operations requiring bespoke processing.",
+      color: colors.karn.yellow,
+      targets: [
+        { name: 'Boutique Roasteries', focus: 'Specialty green/roasted sourcing' },
+        { name: 'C-Suite Gifting', focus: 'Ultra-premium corporate packages' },
+        { name: 'Specialty Exporters', focus: 'Niche international corridors' }
+      ]
+    }
   ];
 
   return (
-    <div className="w-full h-full flex flex-col justify-center py-12">
-      <div className="mb-16 text-center">
-        <p className="font-heading text-gold text-sm tracking-[0.2em] uppercase mb-4">Target Audience</p>
-        <h2 className="text-4xl md:text-6xl font-heading font-light leading-tight">
-          Who We Will <span className="font-medium text-white">Target</span>
-        </h2>
+    <div className="w-full h-full flex flex-col justify-center py-12 relative z-10">
+      <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-karn-blue/5 via-transparent to-transparent pointer-events-none -z-10"></div>
+      <div className="mb-20 text-center">
+        <motion.div initial={{ opacity: 0, y: -20 }} whileInView={{ opacity: 1, y: 0 }} className="flex items-center justify-center gap-3 mb-6">
+           <div className="w-8 h-px bg-karn-blue"></div>
+           <p className="font-heading text-karn-blue text-xs tracking-[0.3em] uppercase">The Target Matrix</p>
+           <div className="w-8 h-px bg-karn-blue"></div>
+        </motion.div>
+        <motion.h2 
+           initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }}
+           className="text-5xl md:text-7xl font-heading font-light leading-tight tracking-tight"
+        >
+          High Net-Worth <br />
+          <span className="font-medium text-white">Tiered Acquisition</span>
+        </motion.h2>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-4 md:gap-6 max-w-5xl mx-auto">
-        {audiences.map((aud, i) => (
+      <div className="grid grid-cols-1 md:grid-cols-3 gap-6 max-w-7xl mx-auto px-4 lg:px-0 w-full">
+        {tiers.map((tier, i) => (
           <motion.div 
             key={i}
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
-            transition={{ delay: i * 0.1, type: "spring", stiffness: 100, damping: 20 }}
-            className="px-8 py-4 glass-panel rounded-full border border-white/10 hover:border-gold transition-colors cursor-default"
+            transition={{ delay: i * 0.15, duration: 0.6 }}
+            className="glass-panel rounded-[2rem] p-8 border border-white/5 hover:border-white/20 transition-all relative overflow-hidden group shadow-2xl"
           >
-            <div className="flex items-center gap-3">
-              <div className="w-2 h-2 rounded-full" style={{ backgroundColor: aud.color }}></div>
-              <span className="text-lg font-medium text-white/90">{aud.title}</span>
+            <div className="absolute top-0 left-0 w-full h-[3px] transform origin-left transition-transform duration-700" style={{ backgroundColor: tier.color }}></div>
+            <div className="absolute top-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 blur-[30px] rounded-full transition-opacity" style={{ backgroundColor: tier.color }}></div>
+            
+            <div className="mb-8">
+              <h3 className="text-xl font-heading font-medium text-white mb-2">{tier.tier}</h3>
+              <p className="text-white/50 text-xs leading-relaxed uppercase tracking-wider">{tier.desc}</p>
+            </div>
+
+            <div className="space-y-4 relative z-10">
+               {tier.targets.map((tgt, idx) => (
+                  <div key={idx} className="bg-black-matte/40 rounded-xl p-4 border border-white/5 group/tgt hover:bg-white/5 transition-colors">
+                     <div className="flex items-center gap-3 mb-1">
+                        <div className="w-1.5 h-1.5 rounded-full shadow-[0_0_8px_currentColor]" style={{ backgroundColor: tier.color, color: tier.color }}></div>
+                        <span className="text-white/90 text-sm font-medium group-hover/tgt:text-white">{tgt.name}</span>
+                     </div>
+                     <p className="text-white/40 text-xs pl-4">{tgt.focus}</p>
+                  </div>
+               ))}
             </div>
           </motion.div>
         ))}
