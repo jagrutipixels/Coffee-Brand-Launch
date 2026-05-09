@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent } from 'motion/react';
 import { ChevronUp } from 'lucide-react';
 import Lenis from '@studio-freight/lenis';
@@ -54,8 +54,8 @@ const navLinks = [
   { label: 'Market', id: 'market' },
   { label: 'Strategy', id: 'strategy' },
   { label: 'Reporting', id: 'reporting' },
-  { label: 'Portfolio', id: 'portfolio' },
   { label: 'Investment', id: 'investment' },
+  { label: 'Portfolio', id: 'portfolio' },
 ];
 
 export default function Presentation() {
@@ -72,6 +72,8 @@ export default function Presentation() {
     setShowScrollTop(latest > 0.05);
   });
 
+  const lenisRef = useRef<Lenis | null>(null);
+
   useEffect(() => {
     const lenis = new Lenis({
       duration: 1.2,
@@ -80,6 +82,7 @@ export default function Presentation() {
       gestureOrientation: 'vertical',
       smoothWheel: true,
     });
+    lenisRef.current = lenis;
 
     function raf(time: number) {
       lenis.raf(time);
@@ -116,7 +119,13 @@ export default function Presentation() {
         {navLinks.map((link) => (
            <button 
              key={link.id} 
-             onClick={() => document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' })}
+             onClick={() => {
+               if (lenisRef.current) {
+                 lenisRef.current.scrollTo(`#${link.id}`, { offset: -100 });
+               } else {
+                 document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
+               }
+             }}
              className="text-[10px] sm:text-xs uppercase tracking-widest text-white/50 hover:text-white hover:text-shadow-glow transition-all"
            >
              {link.label}
@@ -128,7 +137,13 @@ export default function Presentation() {
       <motion.button 
         initial={{ opacity: 0, scale: 0.8 }}
         animate={{ opacity: showScrollTop ? 1 : 0, scale: showScrollTop ? 1 : 0.8 }}
-        onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
+        onClick={() => {
+          if (lenisRef.current) {
+            lenisRef.current.scrollTo(0);
+          } else {
+            window.scrollTo({ top: 0, behavior: 'smooth' });
+          }
+        }}
         className="fixed bottom-8 right-8 z-50 w-12 h-12 glass-panel rounded-full flex items-center justify-center hover:bg-white/10 transition-colors pointer-events-auto border border-white/10 shadow-lg group"
         style={{ pointerEvents: showScrollTop ? 'auto' : 'none' }}
       >

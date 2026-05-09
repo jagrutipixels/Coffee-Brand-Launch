@@ -45,19 +45,19 @@ export default function ClosingSlide() {
           transition={{ duration: 1, delay: 0.5 }}
           className="mt-auto flex flex-col items-center gap-4 text-white/50 text-sm border-t border-white/10 pt-8 w-full max-w-3xl"
         >
-          <div className="flex gap-2 mb-2">
+          <div className="flex gap-2 mb-4">
             {[colors.karn.blue, colors.karn.red, colors.karn.purple, colors.karn.yellow, colors.karn.green].map((c, i) => (
-              <div key={i} className="w-10 h-1 shadow-[0_0_10px_currentColor]" style={{ backgroundColor: c, color: c }}></div>
+              <div key={i} className="w-12 h-1.5 shadow-[0_0_10px_currentColor]" style={{ backgroundColor: c, color: c }}></div>
             ))}
           </div>
-          <p className="font-heading tracking-widest uppercase text-white/80">K.A.R.N. Marketing Warfare LLP</p>
-          <div className="flex flex-col items-center gap-2">
-            <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+          <p className="font-heading tracking-widest uppercase text-white/90 text-lg sm:text-xl">K.A.R.N. Marketing Warfare LLP</p>
+          <div className="flex flex-col items-center gap-3">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center text-base sm:text-lg">
                <a href="mailto:karnmarketingwarfarellp@gmail.com" className="hover:text-white transition-colors">karnmarketingwarfarellp@gmail.com</a>
-               <span className="w-1 h-1 bg-white/20 rounded-full hidden sm:block"></span>
+               <span className="w-1.5 h-1.5 bg-white/30 rounded-full hidden sm:block"></span>
                <a href="tel:9372708970" className="hover:text-white transition-colors">+91 93727 08970</a>
             </div>
-            <p className="text-center text-xs mt-2 max-w-sm sm:max-w-md">Office no 7, 5th floor, C-39A, Gami Industrial park, Pawane, Turbhe, Navi Mumbai - 400710.</p>
+            <p className="text-center text-sm sm:text-base mt-2 max-w-md sm:max-w-xl text-white/70">Office no 7, 5th floor, C-39A, Gami Industrial park, Pawane, Turbhe, Navi Mumbai - 400710.</p>
           </div>
         </motion.div>
       </div>
