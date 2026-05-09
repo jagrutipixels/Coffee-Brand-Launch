@@ -1,8 +1,10 @@
 import React, { useMemo } from 'react';
 import { motion, useScroll, useTransform } from 'motion/react';
-import { images } from '@/lib/constants';
+import { images, colors } from '@/lib/constants';
 
 const FloatingBeans = () => {
+  const kmwColors = [colors.karn.blue, colors.karn.red, colors.karn.purple, colors.karn.yellow, colors.karn.green];
+  
   // Generate random properties for beans (particles)
   const beans = useMemo(() => Array.from({ length: 30 }).map((_, i) => ({
     id: i,
@@ -15,6 +17,7 @@ const FloatingBeans = () => {
     scale: Math.random() * 0.5 + 0.5,
     blur: Math.random() * 4,
     color: Math.random() > 0.5 ? '#2c1e16' : '#1a110b', // Deep coffee colors
+    accentColor: kmwColors[i % kmwColors.length], // Assign a KMW color for subtle glow
   })), []);
 
   return (
@@ -30,7 +33,7 @@ const FloatingBeans = () => {
              left: `${bean.x}%`,
              top: `${bean.y}%`,
              filter: `blur(${bean.blur}px)`,
-             boxShadow: 'inset -2px -2px 6px rgba(0,0,0,0.8), inset 2px 2px 4px rgba(255,255,255,0.1)',
+             boxShadow: `inset -2px -2px 6px rgba(0,0,0,0.8), inset 2px 2px 8px ${bean.accentColor}40`,
            }}
            animate={{
              y: ['-20vh', '120vh'], // Fall down or float up? Let's make them float up like roasting smoke/beans
@@ -104,6 +107,19 @@ export default function CoverSlide() {
           >
             Phase 1: Inception
           </motion.p>
+          
+          <div className="flex gap-2 mb-6">
+            {[colors.karn.blue, colors.karn.red, colors.karn.purple, colors.karn.yellow, colors.karn.green].map((c, i) => (
+              <motion.div 
+                key={i} 
+                initial={{ opacity: 0, scaleX: 0 }}
+                animate={{ opacity: 1, scaleX: 1 }}
+                transition={{ duration: 0.5, delay: 0.8 + (i * 0.1) }}
+                className="w-8 h-0.5 shadow-[0_0_8px_currentColor]" 
+                style={{ backgroundColor: c, color: c, originX: 0 }}
+              />
+            ))}
+          </div>
           
           <h1 className="flex flex-col items-center gap-2 overflow-hidden py-2">
             <motion.span 
