@@ -1,35 +1,8 @@
 import React from 'react';
 import { motion } from 'motion/react';
 import { images, colors } from '@/lib/constants';
-import { Download } from 'lucide-react';
-// @ts-ignore
-import html2pdf from 'html2pdf.js';
 
 export default function ClosingSlide() {
-  const handleDownload = () => {
-    const element = document.getElementById('presentation-root');
-    const opt = {
-      margin: 0,
-      filename: 'KARN_Coffee_Expansion_Proposal.pdf',
-      image: { type: 'jpeg' as const, quality: 0.98 },
-      html2canvas: { 
-        scale: 2, 
-        useCORS: true, 
-        logging: false,
-        letterRendering: true,
-        allowTaint: true
-      },
-      jsPDF: { unit: 'mm' as const, format: 'a4' as const, orientation: 'portrait' as const },
-      pagebreak: { mode: 'avoid-all' as const, before: '.slide-section' }
-    };
-
-    if (element) {
-      const originalScrollPos = window.scrollY;
-      html2pdf().set(opt).from(element).save().finally(() => {
-        window.scrollTo(0, originalScrollPos);
-      });
-    }
-  };
 
   return (
     <div className="relative w-full h-[85vh] rounded-[3rem] overflow-hidden group shadow-2xl border border-gray-900/5">
@@ -61,20 +34,9 @@ export default function ClosingSlide() {
             <span className="font-medium text-gray-900">Coffee Empire?</span>
           </h1>
           
-          <div className="flex flex-col items-center gap-6">
-            <p className="text-sm md:text-base text-karn-yellow font-heading tracking-widest uppercase glass-panel inline-flex px-8 py-3 rounded-full border border-karn-yellow/30 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
-              Transforming Manufacturing Brands Into Market Leaders
-            </p>
-
-            <button 
-              onClick={handleDownload}
-              className="group relative flex items-center gap-3 px-8 py-4 bg-gray-900 text-white rounded-full font-heading tracking-[0.2em] text-xs uppercase hover:bg-gray-800 transition-all duration-300 shadow-xl no-print"
-            >
-              <Download size={18} className="transition-transform group-hover:-translate-y-0.5" />
-              Download PDF Proposal
-              <div className="absolute inset-0 rounded-full bg-white/10 opacity-0 group-hover:opacity-100 transition-opacity"></div>
-            </button>
-          </div>
+          <p className="text-sm md:text-base text-karn-yellow font-heading tracking-widest uppercase glass-panel inline-flex px-8 py-3 rounded-full border border-karn-yellow/30 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+            Transforming Manufacturing Brands Into Market Leaders
+          </p>
         </motion.div>
 
         <motion.div 
