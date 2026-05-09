@@ -55,7 +55,7 @@ export default function BrandPositioningSlide() {
           transition={{ duration: 1 }}
           className="h-[50vh] lg:h-[70vh] rounded-[3rem] overflow-hidden relative border border-gray-900/5 shadow-2xl group order-1 lg:order-2"
         >
-          <img src={images.espresso} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s] ease-out filter contrast-110" />
+          <img src={images.espresso} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s] ease-out filter contrast-110" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/30 to-transparent"></div>
           
           <div className="absolute bottom-12 left-12 z-20">

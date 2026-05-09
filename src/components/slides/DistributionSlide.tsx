@@ -25,10 +25,8 @@ export default function DistributionSlide() {
            initial={{ opacity: 0, scale: 0.95 }} whileInView={{ opacity: 1, scale: 1 }} transition={{ duration: 0.6 }}
            className="col-span-1 md:col-span-2 relative rounded-[2rem] overflow-hidden glass-panel group"
         >
-          <img
-            src={images.team}
-            className="absolute inset-0 w-full h-full object-cover opacity-30 filter sepia-[.3] group-hover:scale-105 transition-transform duration-700"
-          />
+          <img src={images.team}
+            className="absolute inset-0 w-full h-full object-cover opacity-30 filter sepia-[.3] group-hover:scale-105 transition-transform duration-700" referrerPolicy="no-referrer" />
           <div className="absolute inset-0 bg-gradient-to-r from-black-matte via-black-matte/80 to-transparent"></div>
           <div className="absolute inset-0 p-8 flex flex-col justify-end w-3/4">
             <h3 className="text-3xl font-heading font-medium mb-3 text-gray-900">

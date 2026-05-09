@@ -53,3 +53,62 @@
   opacity: 0.08;
   mix-blend-mode: overlay;
 }
+
+@media print, screen {
+  body.is-printing,
+  .is-printing * {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  .is-printing *, .is-printing [style*="opacity"] {
+    transition: none !important;
+    animation: none !important;
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  .is-printing header, 
+  .is-printing button,
+  .is-printing .no-print {
+    display: none !important;
+  }
+
+  .is-printing section {
+    page-break-after: always;
+    break-after: page;
+  }
+}
+
+@media print {
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
+  
+  /* Disable animations and transitions for printing */
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+
+  /* Force elements that appear on scroll to be visible */
+  [style*="opacity"], 
+  [style*="opacity:0"] {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+
+  /* Hide UI elements */
+  header, 
+  button,
+  .no-print {
+    display: none !important;
+  }
+
+  /* Ensure page breaks don't cut content awkwardly */
+  section {
+    page-break-after: always;
+    break-after: page;
+  }
+}

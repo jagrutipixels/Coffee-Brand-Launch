@@ -46,7 +46,7 @@ export default function PortfolioSlide() {
         "Unified thousands of employees under a single vision; increased internal brand pride.",
       images: [
         "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1556761175-5973dc0f32b7?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1475721025505-44fd433140bf?q=80&w=1000&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=1000&auto=format&fit=crop",
       ],
     },
@@ -59,9 +59,9 @@ export default function PortfolioSlide() {
       result:
         'Modernized the brand for the "New India" consumer while maintaining trust of old loyalists.',
       images: [
-        "https://images.unsplash.com/photo-1606757519102-7c5ebcb718cb?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1576092762791-dd9e2220afa1?q=80&w=1000&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1582782787834-03a088cd3518?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1000&auto=format&fit=crop",
       ],
     },
     {
@@ -75,7 +75,7 @@ export default function PortfolioSlide() {
       images: [
         "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1522012170-c081917f8b9e?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000&auto=format&fit=crop",
       ],
     },
     {
@@ -87,7 +87,7 @@ export default function PortfolioSlide() {
       result:
         "Standardized the corporate look for thousands of employees; successfully launched Valuewood as a reliable category.",
       images: [
-        "https://images.unsplash.com/photo-1618220179428-22790b46a0eb?q=80&w=1000&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
         "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop",
       ],
@@ -229,25 +229,19 @@ export default function PortfolioSlide() {
 
               <div className="lg:col-span-7 grid grid-cols-2 gap-4 h-auto md:h-[350px]">
                 <div className="col-span-2 md:col-span-1 row-span-2 rounded-[1.5rem] overflow-hidden relative border border-gray-900/10">
-                  <img
-                    src={study.images[0]}
+                  <img src={study.images[0]}
                     alt={study.title}
-                    className="w-full h-full object-cover rounded-[1.5rem]"
-                  />
+                    className="w-full h-full object-cover rounded-[1.5rem]" referrerPolicy="no-referrer" />
                 </div>
                 <div className="col-span-1 rounded-[1.5rem] overflow-hidden relative border border-gray-900/10 hidden md:block">
-                  <img
-                    src={study.images[1]}
+                  <img src={study.images[1]}
                     alt={study.title}
-                    className="w-full h-full object-cover rounded-[1.5rem]"
-                  />
+                    className="w-full h-full object-cover rounded-[1.5rem]" referrerPolicy="no-referrer" />
                 </div>
                 <div className="col-span-1 rounded-[1.5rem] overflow-hidden relative border border-gray-900/10 hidden md:block">
-                  <img
-                    src={study.images[2]}
+                  <img src={study.images[2]}
                     alt={study.title}
-                    className="w-full h-full object-cover rounded-[1.5rem]"
-                  />
+                    className="w-full h-full object-cover rounded-[1.5rem]" referrerPolicy="no-referrer" />
                 </div>
               </div>
             </motion.div>

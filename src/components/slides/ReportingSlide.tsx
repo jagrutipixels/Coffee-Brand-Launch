@@ -71,11 +71,9 @@ export default function ReportingSlide() {
              className="relative rounded-[2.5rem] overflow-hidden glass-panel border border-gray-900/10 shadow-2xl group h-full min-h-[400px]"
           >
              <div className="absolute inset-0 bg-black-matte z-0"></div>
-             <img 
-               src={images.dashboard} 
+             <img src={images.dashboard} 
                alt="Analytics Dashboard" 
-               className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-1000 filter sepia-[0.1]"
-             />
+               className="w-full h-full object-cover opacity-60 group-hover:scale-105 group-hover:opacity-80 transition-all duration-1000 filter sepia-[0.1]" referrerPolicy="no-referrer" />
              <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-transparent to-transparent"></div>
              <div className="absolute bottom-8 left-8 right-8 glass-panel p-6 rounded-2xl border border-gray-900/10 backdrop-blur-xl">
                <div className="flex justify-between items-center mb-4">

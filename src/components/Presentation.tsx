@@ -101,7 +101,7 @@ export default function Presentation() {
   }, []);
 
   return (
-    <div className="relative w-full bg-black-matte text-cream font-sans">
+    <div id="presentation-root" className="relative w-full bg-black-matte text-cream font-sans">
       {/* Noise Overlay */}
       <div className="noise-overlay"></div>
 
@@ -112,9 +112,9 @@ export default function Presentation() {
       />
       
       {/* Header Navigation */}
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-panel rounded-full px-8 py-4 hidden md:flex items-center gap-8 shadow-2xl border border-gray-900/10">
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-panel rounded-full px-8 py-4 hidden md:flex items-center gap-8 shadow-2xl border border-gray-900/10 no-print">
         <div className="mr-4 hidden lg:block">
-          <img src="https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/5faeae4bc9be9d970fddfab69431165052cfe4d8/KMW-White-01.png" alt="KARN Marketing Warfare" className="h-6 object-contain invert" />
+          <img src="https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/5faeae4bc9be9d970fddfab69431165052cfe4d8/KMW-White-01.png" alt="KARN Marketing Warfare" className="h-6 object-contain invert" referrerPolicy="no-referrer" />
         </div>
         {navLinks.map((link) => (
            <button 
@@ -144,7 +144,7 @@ export default function Presentation() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         }}
-        className="fixed bottom-8 right-8 z-50 w-12 h-12 glass-panel rounded-full flex items-center justify-center hover:bg-gray-900/10 transition-colors pointer-events-auto border border-gray-900/10 shadow-lg group"
+        className="fixed bottom-8 right-8 z-50 w-12 h-12 glass-panel rounded-full flex items-center justify-center hover:bg-gray-900/10 transition-colors pointer-events-auto border border-gray-900/10 shadow-lg group no-print"
         style={{ pointerEvents: showScrollTop ? 'auto' : 'none' }}
       >
         <ChevronUp size={20} className="text-gray-900/90 group-hover:text-gray-900 transition-colors" />

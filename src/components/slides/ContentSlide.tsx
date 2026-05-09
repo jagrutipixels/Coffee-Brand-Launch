@@ -17,10 +17,8 @@ export default function ContentSlide() {
       </div>
 
       <div className="absolute inset-0 z-0 rounded-[3rem] overflow-hidden hidden md:block">
-        <img
-          src={images.cover}
-          className="w-full h-full object-cover opacity-10 sepia-[.3]"
-        />
+        <img src={images.cover}
+          className="w-full h-full object-cover opacity-10 sepia-[.3]" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/80 to-black-matte/20"></div>
       </div>
 

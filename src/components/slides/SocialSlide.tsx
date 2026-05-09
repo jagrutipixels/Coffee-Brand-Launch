@@ -12,10 +12,8 @@ export default function SocialSlide() {
          viewport={{ once: false, amount: 0.3 }}
          className="w-full lg:w-[45%] h-[60vh] lg:h-[75vh] rounded-[3rem] overflow-hidden relative shadow-2xl border border-gray-900/10"
       >
-        <img
-          src={images.social}
-          className="w-full h-full object-cover opacity-60 sepia-[.2] scale-105"
-        />
+        <img src={images.social}
+          className="w-full h-full object-cover opacity-60 sepia-[.2] scale-105" referrerPolicy="no-referrer" />
         <div className="absolute inset-0 bg-gradient-to-tr from-black-matte via-black-matte/40 to-transparent"></div>
         <div className="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-black-matte to-transparent">
           <div className="flex gap-4">

@@ -26,11 +26,9 @@ export default function MarketOpportunitySlide() {
            initial={{ opacity: 0, y: 20 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ duration: 0.6 }}
            className="lg:col-span-8 relative rounded-[2.5rem] overflow-hidden group shadow-2xl bg-black-matte border border-gray-900/5 flex flex-col justify-end min-h-[300px]"
         >
-           <img 
-             src={images.beans} 
+           <img src={images.beans} 
              className="absolute inset-0 w-full h-full object-cover opacity-50 group-hover:scale-105 group-hover:opacity-60 transition-all duration-700" 
-             alt="Coffee Beans" 
-           />
+             alt="Coffee Beans" referrerPolicy="no-referrer" />
            <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/95 via-black-matte/60 to-transparent"></div>
            <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-transparent to-transparent"></div>
            

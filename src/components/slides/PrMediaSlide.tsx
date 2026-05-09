@@ -79,11 +79,9 @@ export default function PrMediaSlide() {
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-karn-blue/10 via-transparent to-transparent -z-10"></div>
             <div className="w-full feature-panel relative glass-panel p-3 rounded-[3rem] shadow-2xl border border-gray-900/10 group h-full max-h-[700px]">
               <div className="w-full h-full relative overflow-hidden rounded-[2.5rem]">
-                <img
-                  src={images.boardroom}
+                <img src={images.boardroom}
                   className="w-full h-full object-cover filter contrast-110 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s]"
-                  alt="Boardroom"
-                />
+                  alt="Boardroom" referrerPolicy="no-referrer" />
                 <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/90 via-black-matte/40 to-transparent z-10"></div>
                 <div className="absolute inset-0 p-12 flex flex-col justify-end z-20 bg-gradient-to-t from-black-matte via-black-matte/50 to-transparent">
                   <div className="w-12 h-[3px] bg-karn-blue mb-6 shadow-[0_0_10px_#2563EB]"></div>

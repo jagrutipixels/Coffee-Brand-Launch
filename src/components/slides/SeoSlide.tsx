@@ -72,10 +72,8 @@ export default function SeoSlide() {
          className="w-full lg:w-[45%] h-[50vh] lg:h-[75vh] rounded-[3rem] overflow-hidden relative glass-panel border border-gray-900/5 flex flex-col p-4 shadow-2xl"
       >
         <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
-           <img
-             src={images.dashboard}
-             className="w-full h-full object-cover opacity-60 filter contrast-125 sepia-[.2] scale-105"
-           />
+           <img src={images.dashboard}
+             className="w-full h-full object-cover opacity-60 filter contrast-125 sepia-[.2] scale-105" referrerPolicy="no-referrer" />
            <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/90 via-[#16A34A]/10 to-transparent"></div>
            <div className="absolute inset-0 bg-black-matte/40"></div>
            

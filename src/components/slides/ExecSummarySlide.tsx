@@ -65,7 +65,7 @@ export default function ExecSummarySlide() {
             className="w-full h-full rounded-[3rem] overflow-hidden relative shadow-2xl border border-gray-900/5 group"
           >
              <div className="absolute inset-0 bg-black-matte z-0"></div>
-             <img src={images.beans} alt="Premium Coffee" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s]" />
+             <img src={images.beans} alt="Premium Coffee" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s]" referrerPolicy="no-referrer" />
              <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/30 to-transparent z-10"></div>
              
              {/* Floating UI Elements inside Image */}

@@ -54,7 +54,7 @@ export default function WebsiteSlide() {
          className="w-full md:w-[45%] h-[75vh] rounded-[2rem] overflow-hidden glass-panel border border-gray-900/5 p-4 shadow-2xl relative group"
       >
          <div className="w-full h-full rounded-xl overflow-hidden relative">
-            <img src={images.network} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] sepia-[.2]" alt="Digital Infrastructure" />
+            <img src={images.network} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] sepia-[.2]" alt="Digital Infrastructure" referrerPolicy="no-referrer" />
             <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-transparent to-transparent"></div>
          </div>
       </motion.div>
