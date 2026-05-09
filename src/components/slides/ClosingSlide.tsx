@@ -1,37 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'motion/react';
 import { images, colors } from '@/lib/constants';
 
 export default function ClosingSlide() {
-  const [isGenerating, setIsGenerating] = useState(false);
-
-  const handleDownload = async () => {
-    setIsGenerating(true);
-    document.body.classList.add('is-printing');
-    
-    // Give browser a frame to apply CSS
-    await new Promise(r => setTimeout(r, 100));
-
-    try {
-      const html2pdf = (await import('html2pdf.js')).default;
-      const element = document.getElementById('presentation-root');
-      
-      const opt = {
-        margin:       0,
-        filename:     'KMW_Coffee_Proposal.pdf',
-        image:        { type: 'jpeg' as const, quality: 0.98 },
-        html2canvas:  { scale: 2, useCORS: true, logging: false },
-        jsPDF:        { unit: 'in', format: 'legal', orientation: 'landscape' as const }
-      };
-
-      await html2pdf().set(opt).from(element).save();
-    } catch (error) {
-      console.error('Error generating PDF:', error);
-    } finally {
-      document.body.classList.remove('is-printing');
-      setIsGenerating(false);
-    }
-  };
   return (
     <div className="relative w-full h-[85vh] rounded-[3rem] overflow-hidden group shadow-2xl border border-gray-900/5">
       <div className="absolute inset-0 z-0">
@@ -87,13 +58,6 @@ export default function ClosingSlide() {
                <a href="tel:9372060357" className="hover:text-gray-900 transition-colors">+91 93720 60357</a>
             </div>
             <p className="text-center text-sm sm:text-base mt-2 max-w-md sm:max-w-xl text-gray-900">Office no 7, 5th floor, C-39A, Gami Industrial park, Pawane, Turbhe, Navi Mumbai - 400710.</p>
-            <button
-              onClick={handleDownload}
-              disabled={isGenerating}
-              className="mt-6 px-8 py-3 bg-gray-900 text-[#f5f5f0] rounded-full text-sm font-bold uppercase tracking-widest hover:bg-gray-800 transition-colors shadow-xl hover:-translate-y-1 transform duration-300 no-print border border-gray-800 disabled:opacity-50 disabled:cursor-not-allowed flex items-center gap-2"
-            >
-              {isGenerating ? 'Generating Structured PDF...' : 'Download PDF Proposal'}
-            </button>
           </div>
         </motion.div>
       </div>

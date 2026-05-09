@@ -5,24 +5,24 @@ import { cn } from '@/lib/utils';
 export default function InvestmentSlide() {
   const pillars = [
     {
-      title: 'Global Digital Infrastructure',
+      title: 'Brand Infrastructure & Content',
       color: '#2563EB', // Blue
-      items: ['Enterprise B2B Web Ecosystem', 'Global Search & Technical SEO Engine', 'Custom AI Sales Assistant Integration', 'Full Hubspot/Salesforce CRM Pipelines']
+      items: [
+        'Celebrity Level Positioning & Execution',
+        'Brand Dominance across All Platforms',
+        '25–30 Premium Posts per month',
+        '20–30 Cinematic Reels per month'
+      ]
     },
     {
-      title: 'Cinematic Production Unit',
+      title: 'Global Media & IP Security',
       color: '#DC2626', // Red
-      items: ['Quarterly Brand Documentaries', 'High-End Factory & Product Cinematography', 'Consistent Executive Founder Series', 'International Trade Show Video Assets']
-    },
-    {
-      title: 'Performance & Lead Growth',
-      color: '#EAB308', // Yellow
-      items: ['Multi-Channel Paid Acquisition', 'Automated Lead Nurturing Workflows', 'LinkedIn B2B Account-Based Marketing', 'Data-Driven Retargeting Infrastructures']
-    },
-    {
-      title: 'Media & Global Positioning',
-      color: '#9333EA', // Purple
-      items: ['Tier-1 International PR Outreach', 'Podcast & Speaking Placements', 'Global Distributor Network Collateral', 'Dedicated Account Executive & Weekly Sprints']
+      items: [
+        'TV & Mainstream Media Promotion',
+        'Strategic Reality Show Integrations',
+        'Comprehensive Trademark Support',
+        'Dedicated Ecosystem Management'
+      ]
     }
   ];
 
@@ -70,7 +70,7 @@ export default function InvestmentSlide() {
            </div>
          </motion.div>
 
-         <div className="col-span-1 lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 items-center">
+         <div className="col-span-1 lg:col-span-7 grid grid-cols-1 md:grid-cols-2 gap-6 items-stretch">
             {pillars.map((pillar, i) => (
               <motion.div 
                 key={i}
