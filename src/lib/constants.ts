@@ -3,7 +3,7 @@ export const images = {
   beans: 'https://images.unsplash.com/photo-1559525839-b184a4d698c7?q=80&w=2938&auto=format&fit=crop',
   factory: 'https://images.unsplash.com/photo-1587046944208-14283b0cb68b?q=80&w=2874&auto=format&fit=crop',
   macro: 'https://images.unsplash.com/photo-1620247656910-af156ce5b404?q=80&w=2874&auto=format&fit=crop',
-  logistics: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?q=80&w=2940&auto=format&fit=crop',
+  logistics: 'https://images.unsplash.com/photo-1586528116311-ad8ed7c756b4?q=80&w=2938&auto=format&fit=crop',
   boardroom: 'https://images.unsplash.com/photo-1497366216548-37526070297c?q=80&w=2938&auto=format&fit=crop',
   dashboard: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?q=80&w=2938&auto=format&fit=crop',
   espresso: 'https://images.unsplash.com/photo-1497935586351-b67a49e012bf?q=80&w=2874&auto=format&fit=crop',
