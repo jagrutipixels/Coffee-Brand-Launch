@@ -45,9 +45,7 @@ export default function PortfolioSlide() {
       result:
         "Unified thousands of employees under a single vision; increased internal brand pride.",
       images: [
-        "https://images.unsplash.com/photo-1540575467063-178a50c2df87?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1475721025505-44fd433140bf?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1561489413-985b06da5bee?q=80&w=1000&auto=format&fit=crop",
+        "https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/2a7efcf269e57c043a49904ddca722c6a7216798/colgate.jpg"
       ],
     },
     {
@@ -59,9 +57,10 @@ export default function PortfolioSlide() {
       result:
         'Modernized the brand for the "New India" consumer while maintaining trust of old loyalists.',
       images: [
-        "https://images.unsplash.com/photo-1576092762791-dd9e2220afa1?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1564890369478-c89ca6d9cde9?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1544787219-7f47ccb76574?q=80&w=1000&auto=format&fit=crop",
+        "https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/9850854ac511e961f00e3838544142eb1dbec023/girnar.jpg",
+      ],
+      alts: [
+        "Girnar Tea Packaging Redesign",
       ],
     },
     {
@@ -73,9 +72,7 @@ export default function PortfolioSlide() {
       result:
         "Successfully positioned as a premium lounge in the UAE; featured in high-end lifestyle content.",
       images: [
-        "https://images.unsplash.com/photo-1517248135467-4c7edcad34c4?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1600880292203-757bb62b4baf?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1572116469696-31de0f17cc34?q=80&w=1000&auto=format&fit=crop",
+        "https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/2a7efcf269e57c043a49904ddca722c6a7216798/Sheesha.jpg"
       ],
     },
     {
@@ -87,9 +84,7 @@ export default function PortfolioSlide() {
       result:
         "Standardized the corporate look for thousands of employees; successfully launched Valuewood as a reliable category.",
       images: [
-        "https://images.unsplash.com/photo-1555041469-a586c61ea9bc?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1586023492125-27b2c045efd7?q=80&w=1000&auto=format&fit=crop",
-        "https://images.unsplash.com/photo-1524758631624-e2822e304c36?q=80&w=1000&auto=format&fit=crop",
+        "https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/a65c532cfc7aacb5764c4222b138d11889beaaae/pepperfry.jpg"
       ],
     },
   ];
@@ -227,22 +222,26 @@ export default function PortfolioSlide() {
                 </div>
               </div>
 
-              <div className="lg:col-span-7 grid grid-cols-2 gap-4 h-auto md:h-[350px]">
-                <div className="col-span-2 md:col-span-1 row-span-2 rounded-[1.5rem] overflow-hidden relative border border-gray-900/10">
+              <div className={`lg:col-span-7 grid grid-cols-2 gap-4 ${study.images.length > 1 ? 'md:h-[350px]' : 'h-auto'}`}>
+                <div className={`col-span-2 ${study.images.length > 1 ? 'md:col-span-1 row-span-2' : ''} rounded-[1.5rem] overflow-hidden relative border border-gray-900/10`}>
                   <img src={study.images[0]}
-                    alt={study.title}
-                    className="w-full h-full object-cover rounded-[1.5rem]" referrerPolicy="no-referrer" />
+                    alt={study.alts ? study.alts[0] : study.title}
+                    className={`w-full ${study.images.length > 1 ? 'h-full object-cover' : 'h-auto object-contain'} rounded-[1.5rem]`} referrerPolicy="no-referrer" />
                 </div>
+                {study.images[1] && (
                 <div className="col-span-1 rounded-[1.5rem] overflow-hidden relative border border-gray-900/10 hidden md:block">
                   <img src={study.images[1]}
-                    alt={study.title}
+                    alt={study.alts ? study.alts[1] : study.title}
                     className="w-full h-full object-cover rounded-[1.5rem]" referrerPolicy="no-referrer" />
                 </div>
+                )}
+                {study.images[2] && (
                 <div className="col-span-1 rounded-[1.5rem] overflow-hidden relative border border-gray-900/10 hidden md:block">
                   <img src={study.images[2]}
-                    alt={study.title}
+                    alt={study.alts ? study.alts[2] : study.title}
                     className="w-full h-full object-cover rounded-[1.5rem]" referrerPolicy="no-referrer" />
                 </div>
+                )}
               </div>
             </motion.div>
           ))}
