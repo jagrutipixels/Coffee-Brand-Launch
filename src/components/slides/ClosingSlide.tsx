@@ -26,30 +26,16 @@ export default function ClosingSlide() {
            whileInView={{ opacity: 1, y: 0 }}
            viewport={{ once: false, amount: 0.3 }}
            transition={{ duration: 0.8 }}
+           className="mt-auto mb-auto flex flex-col items-center justify-center"
         >
-          <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-heading font-light tracking-tight mb-6 max-w-5xl leading-[1.1]">
+          <h1 className="text-5xl md:text-7xl lg:text-[6rem] font-heading font-light tracking-tight mb-8 max-w-5xl leading-[1.1]">
             Ready To Build A Global <br />
             <span className="font-medium text-white">Coffee Empire?</span>
           </h1>
           
-          <p className="text-sm md:text-base text-karn-yellow mb-12 font-heading tracking-widest uppercase glass-panel inline-block px-8 py-3 rounded-full border border-karn-yellow/30 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
+          <p className="text-sm md:text-base text-karn-yellow font-heading tracking-widest uppercase glass-panel inline-flex px-8 py-3 rounded-full border border-karn-yellow/30 shadow-[0_0_15px_rgba(234,179,8,0.2)]">
             Transforming Manufacturing Brands Into Market Leaders
           </p>
-        </motion.div>
-
-        <motion.div 
-          initial={{ opacity: 0, y: 30 }}
-          whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: false, amount: 0.3 }}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="flex flex-col sm:flex-row gap-6 mb-16"
-        >
-          <button className="px-8 py-4 bg-white text-black-matte font-medium rounded-full hover:bg-karn-yellow hover:text-white transition-colors duration-300 transform hover:scale-105 active:scale-95 shadow-xl">
-             Schedule Strategy Meeting
-          </button>
-          <button className="px-8 py-4 glass-panel border border-white/20 text-white rounded-full hover:border-karn-yellow hover:text-karn-yellow transition-colors duration-300 transform hover:scale-105 active:scale-95">
-             Download Proposal PDF
-          </button>
         </motion.div>
 
         <motion.div 
@@ -57,18 +43,21 @@ export default function ClosingSlide() {
           whileInView={{ opacity: 1 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 1, delay: 0.5 }}
-          className="mt-auto flex flex-col items-center gap-4 text-white/50 text-sm border-t border-white/10 pt-8 w-full max-w-2xl"
+          className="mt-auto flex flex-col items-center gap-4 text-white/50 text-sm border-t border-white/10 pt-8 w-full max-w-3xl"
         >
           <div className="flex gap-2 mb-2">
             {[colors.karn.blue, colors.karn.red, colors.karn.purple, colors.karn.yellow, colors.karn.green].map((c, i) => (
               <div key={i} className="w-10 h-1 shadow-[0_0_10px_currentColor]" style={{ backgroundColor: c, color: c }}></div>
             ))}
           </div>
-          <p className="font-heading tracking-widest uppercase">K.A.R.N. Marketing Warfare LLP</p>
-          <div className="flex items-center gap-6">
-             <span>contact@karn.agency</span>
-             <span className="w-1 h-1 bg-white/20 rounded-full"></span>
-             <span>www.karn.agency</span>
+          <p className="font-heading tracking-widest uppercase text-white/80">K.A.R.N. Marketing Warfare LLP</p>
+          <div className="flex flex-col items-center gap-2">
+            <div className="flex items-center gap-4 sm:gap-6 flex-wrap justify-center">
+               <a href="mailto:karnmarketingwarfarellp@gmail.com" className="hover:text-white transition-colors">karnmarketingwarfarellp@gmail.com</a>
+               <span className="w-1 h-1 bg-white/20 rounded-full hidden sm:block"></span>
+               <a href="tel:9372708970" className="hover:text-white transition-colors">+91 93727 08970</a>
+            </div>
+            <p className="text-center text-xs mt-2 max-w-sm sm:max-w-md">Office no 7, 5th floor, C-39A, Gami Industrial park, Pawane, Turbhe, Navi Mumbai - 400710.</p>
           </div>
         </motion.div>
       </div>
