@@ -5,23 +5,43 @@ import { cn } from '@/lib/utils';
 export default function InvestmentSlide() {
   const pillars = [
     {
-      title: 'Brand Infrastructure & Content',
+      title: 'Omnichannel & Cinematic Production',
       color: '#2563EB', // Blue
       items: [
-        'Celebrity Level Positioning & Execution',
-        'Brand Dominance across All Platforms',
-        '25–30 Premium Posts per month',
-        '20–30 Cinematic Reels per month'
+        '25–30 Premium Posts & 20–30 Reels/mo',
+        'Celebrity-Level Production & Shoots',
+        'Multi-Platform Dominance (IG, LI, X, YT)',
+        'Global Digital Brand Ecosystem'
       ]
     },
     {
-      title: 'Global Media & IP Security',
-      color: '#DC2626', // Red
+      title: 'Performance & Search Authority',
+      color: '#EAB308', // Yellow
       items: [
-        'TV & Mainstream Media Promotion',
-        'Strategic Reality Show Integrations',
-        'Comprehensive Trademark Support',
-        'Dedicated Ecosystem Management'
+        'PAN India Scale Meta & Google Ads',
+        'Full-Funnel Lead Generation Systems',
+        '100+ Keyword SEO Dominance & 12+ Blogs',
+        'AI-Powered Sales & Retargeting Engine'
+      ]
+    },
+    {
+      title: 'Enterprise Digital Infrastructure',
+      color: '#10B981', // Green
+      items: [
+        'Custom Enterprise Web Architecture',
+        'HubSpot/CRM & Analytics Integration',
+        'AI Workflow Automation Ecosystem',
+        'Dedicated Weekly Strategic Sprints'
+      ]
+    },
+    {
+      title: 'PR, Offline & Authority Positioning',
+      color: '#9333EA', // Purple
+      items: [
+        'Premium Outdoor & Mall Branding Support',
+        'TV, News & PR Influencer Outreach',
+        'Comprehensive Trademark & IP Advisory',
+        'Outsourced CMO & Marketing War-Room'
       ]
     }
   ];
