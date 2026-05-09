@@ -8,11 +8,11 @@ export default function ContentSlide() {
       <div className="mb-16 relative z-10 w-full max-w-4xl mx-auto text-center">
         <motion.div initial={{ opacity: 0, scale: 0.9 }} whileInView={{ opacity: 1, scale: 1 }} className="flex items-center justify-center gap-3 mb-6">
            <div className="w-3 h-3 rounded-full bg-karn-red shadow-[0_0_15px_rgba(220,38,38,0.6)]"></div>
-           <p className="font-heading text-white/70 text-xs tracking-[0.3em] uppercase">Cinematic Production</p>
+           <p className="font-heading text-gray-900 text-xs tracking-[0.3em] uppercase">Cinematic Production</p>
            <div className="w-3 h-3 rounded-full bg-karn-yellow shadow-[0_0_15px_rgba(234,179,8,0.6)]"></div>
         </motion.div>
         <h2 className="text-5xl md:text-7xl font-heading font-light leading-[1.1] tracking-tight">
-          Enterprise <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-white to-white/40">Storytelling</span>
+          Enterprise <span className="font-medium text-transparent bg-clip-text bg-gradient-to-r from-gray-900 to-gray-900/40">Storytelling</span>
         </h2>
       </div>
 
@@ -21,7 +21,7 @@ export default function ContentSlide() {
           src={images.cover}
           className="w-full h-full object-cover opacity-10 sepia-[.3]"
         />
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0d0c0c] via-[#0d0c0c]/80 to-[#0d0c0c]/20"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/80 to-black-matte/20"></div>
       </div>
 
       <div className="flex-1 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-12 w-full max-w-7xl mx-auto">
@@ -39,15 +39,15 @@ export default function ContentSlide() {
             transition={{ delay: i * 0.1, duration: 0.5 }}
             viewport={{ once: false, amount: 0.2 }}
             key={i}
-            className="glass-panel rounded-[2rem] p-8 flex flex-col items-start text-left hover:bg-white/5 transition-all group overflow-hidden relative border border-white/5 shadow-xl min-h-[220px] cursor-pointer"
+            className="glass-panel rounded-[2rem] p-8 flex flex-col items-start text-left hover:bg-gray-900/5 transition-all group overflow-hidden relative border border-gray-900/5 shadow-xl min-h-[220px] cursor-pointer"
           >
             <div className="absolute top-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[40px] rounded-bl-full -mr-4 -mt-4" style={{ backgroundColor: item.c }}></div>
             
             {/* Default Content */}
             <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-8 w-full">
               <div className="w-12 h-1 mb-6 rounded-full" style={{ backgroundColor: item.c }}></div>
-              <h4 className="text-2xl font-heading font-medium text-white mb-3">{item.t}</h4>
-              <p className="text-white/50 text-sm leading-relaxed">{item.d}</p>
+              <h4 className="text-2xl font-heading font-medium text-gray-900 mb-3">{item.t}</h4>
+              <p className="text-gray-900 text-sm leading-relaxed">{item.d}</p>
             </div>
 
             {/* Hover Details Content */}
@@ -59,7 +59,7 @@ export default function ContentSlide() {
                  <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.c }}></div>
                  <h4 className="text-sm font-medium" style={{ color: item.c }}>{item.t}</h4>
               </div>
-              <p className="text-white/90 text-sm leading-relaxed">{item.details}</p>
+              <p className="text-gray-900/90 text-sm leading-relaxed">{item.details}</p>
             </div>
           </motion.div>
         ))}

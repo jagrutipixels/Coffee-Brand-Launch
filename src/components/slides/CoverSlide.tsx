@@ -50,7 +50,7 @@ const FloatingBeans = () => {
            }}
         >
           {/* Slit of the coffee bean */}
-          <div className="absolute top-[10%] left-[40%] w-[20%] h-[80%] bg-[#0f0a07] rounded-full rotate-[-10deg] opacity-60 mix-blend-multiply blur-[0.5px]"></div>
+          <div className="absolute top-[10%] left-[40%] w-[20%] h-[80%] bg-black-matte rounded-full rotate-[-10deg] opacity-60 mix-blend-multiply blur-[0.5px]"></div>
         </motion.div>
       ))}
     </div>
@@ -63,13 +63,13 @@ export default function CoverSlide() {
   const opacity = useTransform(scrollYProgress, [0, 0.2], [1, 0]);
 
   return (
-    <div className="relative w-full h-[95vh] rounded-[3rem] overflow-hidden group shadow-2xl shadow-black/80 border border-[#2c1e16]/30 mx-auto bg-[#0a0604]">
+    <div className="relative w-full h-[95vh] rounded-[3rem] overflow-hidden group shadow-2xl shadow-black/80 border border-[#2c1e16]/30 mx-auto bg-black-matte">
       {/* 3D Coffee Bean Particles */}
       <FloatingBeans />
 
       <motion.div style={{ y: y1 }} className="absolute inset-0 z-0">
-        <div className="absolute inset-0 bg-gradient-to-t from-[#0a0604] via-[#0a0604]/60 to-[#0a0604]/20 z-10"></div>
-        <div className="absolute inset-0 bg-gradient-to-r from-black-matte via-transparent to-transparent z-10 mix-blend-multiply"></div>
+        <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/60 to-black-matte/20 z-10"></div>
+        <div className="absolute inset-0 bg-gradient-to-r from-black-matte via-transparent to-transparent z-10"></div>
         
         {/* Dynamic Abstract Roasting glow */}
         <motion.div 
@@ -84,7 +84,7 @@ export default function CoverSlide() {
           transition={{ duration: 25, ease: "easeOut" }}
           src={"https://images.unsplash.com/photo-1611162458324-aae1eb4129a4?q=80&w=2874&auto=format&fit=crop"} 
           alt="Coffee Manufacturing Roaster" 
-          className="w-full h-full object-cover opacity-60 sepia-[.4] contrast-[1.2] grayscale-[50%] mix-blend-luminosity"
+          className="w-full h-full object-cover opacity-60 sepia-[.4] contrast-[1.2] grayscale-[50%]"
         />
         {/* Adds a second grain overlay */}
         <div className="absolute inset-0 bg-[url('https://grainy-gradients.vercel.app/noise.svg')] opacity-20 pointer-events-none mix-blend-overlay z-10"></div>
@@ -126,9 +126,9 @@ export default function CoverSlide() {
               initial={{ opacity: 0, y: 100, rotateX: -30 }} 
               animate={{ opacity: 1, y: 0, rotateX: 0 }}
               transition={{ duration: 1.2, delay: 0.6, ease: [0.16, 1, 0.3, 1] }}
-              className="text-6xl md:text-8xl lg:text-[7rem] font-heading font-light tracking-tighter leading-[0.8] text-white"
+              className="text-6xl md:text-8xl lg:text-[7rem] font-heading font-light tracking-tighter leading-[0.8] text-gray-900"
             >
-              Mastering the <span className="font-serif italic text-white/50">Roast</span>
+              Mastering the <span className="font-serif italic text-gray-900">Roast</span>
             </motion.span>
             <motion.span 
               initial={{ opacity: 0, y: 100, rotateX: -30 }} 
@@ -145,7 +145,7 @@ export default function CoverSlide() {
           initial={{ opacity: 0, scale: 0.95 }}
           animate={{ opacity: 1, scale: 1 }}
           transition={{ duration: 1, delay: 1.2 }}
-          className="text-white/60 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed mt-4"
+          className="text-gray-900/90 text-lg md:text-xl font-light tracking-wide max-w-2xl leading-relaxed mt-4"
         >
           A highly-calibrated, full-spectrum marketing infrastructure designed to position your operations at the apex of the global coffee supply chain.
         </motion.p>
@@ -155,14 +155,14 @@ export default function CoverSlide() {
          style={{ opacity }}
          className="absolute bottom-10 left-1/2 -translate-x-1/2 flex flex-col items-center gap-3 z-30"
       >
-         <div className="w-[1px] h-16 relative overflow-hidden bg-white/10">
+         <div className="w-[1px] h-16 relative overflow-hidden bg-gray-900/10">
            <motion.div 
              animate={{ y: ['-100%', '200%'] }} 
              transition={{ duration: 2, repeat: Infinity, ease: "linear" }}
              className="absolute top-0 left-0 w-full h-1/2 bg-gradient-to-b from-transparent via-[#d4af37] to-transparent"
            />
          </div>
-         <span className="text-[9px] uppercase tracking-[0.3em] text-white/40 font-mono">Ignite Experience</span>
+         <span className="text-[9px] uppercase tracking-[0.3em] text-gray-900 font-mono">Ignite Experience</span>
       </motion.div>
     </div>
   );

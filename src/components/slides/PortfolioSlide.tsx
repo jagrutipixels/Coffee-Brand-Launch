@@ -39,8 +39,8 @@ export default function PortfolioSlide() {
     <div className="flex flex-col w-full min-h-[80vh] relative z-10 py-12">
       <div className="mb-12">
         <motion.div initial={{ opacity: 0, x: -20 }} whileInView={{ opacity: 1, x: 0 }} className="flex items-center gap-3 mb-6">
-           <div className="w-8 h-[2px] bg-white/20"></div>
-           <p className="font-heading text-white/50 text-xs tracking-[0.3em] uppercase">KARN Portfolio</p>
+           <div className="w-8 h-[2px] bg-gray-900/20"></div>
+           <p className="font-heading text-gray-900 text-xs tracking-[0.3em] uppercase">KARN Portfolio</p>
         </motion.div>
         
         <motion.h2 
@@ -48,7 +48,7 @@ export default function PortfolioSlide() {
            className="text-5xl md:text-7xl font-heading font-light leading-tight tracking-tight mb-4"
         >
           Brands We've <br />
-          <span className="font-medium text-white">Successfully Built</span>
+          <span className="font-medium text-gray-900">Successfully Built</span>
         </motion.h2>
       </div>
 
@@ -64,34 +64,34 @@ export default function PortfolioSlide() {
               whileInView={{ opacity: 1, y: 0 }}
               transition={{ delay: 0.1 * i, duration: 0.6 }}
               viewport={{ once: true }}
-              className="w-full rounded-[2.5rem] bg-[#0c0c0e] border border-white/5 group hover:border-white/20 transition-all block relative overflow-hidden shadow-2xl"
+              className="w-full rounded-[2.5rem] bg-black-matte border border-gray-900/5 group hover:border-gray-900/20 transition-all block relative overflow-hidden shadow-2xl"
             >
-              <div className="h-[280px] w-full relative overflow-hidden border-b border-white/10 bg-white/5">
+              <div className="h-[280px] w-full relative overflow-hidden border-b border-gray-900/10 bg-gray-900/5">
                 {/* Live Preview via Iframe Scale hack. Fallback to image if iframe fails */}
                 <div className="absolute top-0 left-0 w-[400%] h-[400%] origin-top-left scale-[0.25] pointer-events-none opacity-80 group-hover:opacity-100 transition-opacity duration-500">
-                   <iframe src={item.url} className="w-full h-full border-none bg-white" loading="lazy" title={item.name} />
+                   <iframe src={item.url} className="w-full h-full border-none bg-gray-900" loading="lazy" title={item.name} />
                 </div>
                 
                 {/* Overlay Gradient to blend edges */}
-                <div className="absolute inset-0 bg-gradient-to-t from-[#0c0c0e] via-transparent to-transparent opacity-90 pointer-events-none"></div>
+                <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-transparent to-transparent opacity-90 pointer-events-none"></div>
                 
                 {/* Overlay Badge */}
-                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black-matte/80 backdrop-blur-md border border-white/10 px-5 py-2.5 rounded-full z-20">
-                   <span className="text-[10px] font-heading uppercase tracking-[0.2em] text-white/90">{item.status}</span>
+                <div className="absolute bottom-6 left-1/2 -translate-x-1/2 whitespace-nowrap bg-black-matte/80 backdrop-blur-md border border-gray-900/10 px-5 py-2.5 rounded-full z-20">
+                   <span className="text-[10px] font-heading uppercase tracking-[0.2em] text-gray-900/90">{item.status}</span>
                 </div>
 
                 {/* Hover Reveal Explore */}
-                <div className="absolute inset-0 bg-[#0c0c0e]/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center z-10">
-                    <div className="w-16 h-16 rounded-full bg-white text-black-matte flex items-center justify-center mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">
+                <div className="absolute inset-0 bg-black-matte/80 backdrop-blur-sm opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex flex-col items-center justify-center z-10">
+                    <div className="w-16 h-16 rounded-full bg-gray-900 text-black-matte flex items-center justify-center mb-4 transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 shadow-xl">
                       <ExternalLink size={24} />
                     </div>
-                    <span className="text-white font-heading tracking-[0.2em] text-xs uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Explore Launch Site</span>
+                    <span className="text-gray-900 font-heading tracking-[0.2em] text-xs uppercase transform translate-y-4 group-hover:translate-y-0 transition-transform duration-300 delay-75">Explore Launch Site</span>
                 </div>
               </div>
               
               <div className="p-8">
-                <h3 className="text-4xl font-serif text-white mb-4 tracking-tight">{item.name}</h3>
-                <p className="text-white/50 text-[15px] leading-relaxed">{item.desc}</p>
+                <h3 className="text-4xl font-serif text-gray-900 mb-4 tracking-tight">{item.name}</h3>
+                <p className="text-gray-900 text-[15px] leading-relaxed">{item.desc}</p>
               </div>
             </motion.a>
           ))}

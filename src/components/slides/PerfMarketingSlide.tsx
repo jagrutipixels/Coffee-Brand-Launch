@@ -19,7 +19,7 @@ export default function PerfMarketingSlide() {
            className="text-5xl md:text-7xl font-heading font-light leading-[1.1] mb-20 text-center tracking-tight"
         >
           Aggressive <br />
-          <span className="font-medium text-white">Digital Warfare.</span>
+          <span className="font-medium text-gray-900">Digital Warfare.</span>
         </motion.h2>
 
         <div className="w-full grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-4 relative">
@@ -57,17 +57,17 @@ export default function PerfMarketingSlide() {
               transition={{ delay: i * 0.1, duration: 0.6 }}
               viewport={{ once: false, amount: 0.4 }}
               key={i}
-              className="glass-panel p-8 rounded-[2rem] flex flex-col items-center text-center relative border border-white/5 hover:border-white/20 transition-all group hover:-translate-y-2 bg-[#0a0a0a]"
+              className="glass-panel p-8 rounded-[2rem] flex flex-col items-center text-center relative border border-gray-900/5 hover:border-gray-900/20 transition-all group hover:-translate-y-2 bg-black-matte"
             >
               <div className="absolute top-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 blur-[30px] rounded-bl-full transition-opacity" style={{ backgroundColor: step.c }}></div>
               
               <div className="w-16 h-16 rounded-full mb-8 border-2 flex items-center justify-center bg-black-matte shadow-2xl relative" style={{ borderColor: step.c }}>
                 <div className="absolute inset-0 rounded-full animate-ping opacity-20" style={{ backgroundColor: step.c }}></div>
-                <span className="font-heading text-lg font-medium tracking-widest text-white">{step.n}</span>
+                <span className="font-heading text-lg font-medium tracking-widest text-gray-900">{step.n}</span>
               </div>
               
-              <h4 className="text-xl font-medium text-white mb-4 leading-tight">{step.t}</h4>
-              <p className="text-white/50 text-sm leading-relaxed">{step.d}</p>
+              <h4 className="text-xl font-medium text-gray-900 mb-4 leading-tight">{step.t}</h4>
+              <p className="text-gray-900 text-sm leading-relaxed">{step.d}</p>
             </motion.div>
           ))}
         </div>

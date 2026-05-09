@@ -17,7 +17,7 @@ export default function OutdoorSlide() {
            className="text-5xl md:text-7xl font-heading font-light leading-[1.1] tracking-tight"
         >
           Large-Scale Brand <br />
-          <span className="font-medium text-white">Visibility</span>
+          <span className="font-medium text-gray-900">Visibility</span>
         </motion.h2>
       </div>
 
@@ -54,7 +54,7 @@ export default function OutdoorSlide() {
                initial={{ opacity: 0, scale: 0.95, y: 20 }}
                whileInView={{ opacity: 1, scale: 1, y: 0 }}
                transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
-               className="glass-panel p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[240px]"
+               className="glass-panel p-8 md:p-10 rounded-[2.5rem] border border-gray-900/5 relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[240px]"
             >
               <div className="absolute top-0 right-0 w-48 h-48 opacity-10 group-hover:opacity-20 blur-[50px] transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: item.c }}></div>
               <div className="absolute left-0 top-0 w-1.5 h-full opacity-50 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: item.c }}></div>
@@ -62,14 +62,14 @@ export default function OutdoorSlide() {
               <div className="relative z-10 flex items-center justify-between mb-8">
                  <div className="flex items-center gap-4">
                     <div className="w-3 h-3 rounded-full shadow-[0_0_12px_currentColor]" style={{ backgroundColor: item.c, color: item.c }}></div>
-                    <h4 className="text-2xl font-heading font-medium text-white">{item.t}</h4>
+                    <h4 className="text-2xl font-heading font-medium text-gray-900">{item.t}</h4>
                  </div>
-                 <div className="px-3 py-1 rounded-full border border-white/10 text-white/40 text-xs font-mono tracking-wider uppercase bg-black-matte/40 group-hover:bg-white/5 group-hover:text-white/80 transition-colors">
+                 <div className="px-3 py-1 rounded-full border border-gray-900/10 text-gray-900 text-xs font-mono tracking-wider uppercase bg-black-matte/40 group-hover:bg-gray-900/5 group-hover:text-gray-900 transition-colors">
                     {item.metric}
                  </div>
               </div>
 
-              <p className="text-white/60 text-base leading-relaxed relative z-10 max-w-md">
+              <p className="text-gray-900/90 text-base leading-relaxed relative z-10 max-w-md">
                 {item.d}
               </p>
             </motion.div>

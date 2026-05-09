@@ -10,14 +10,14 @@ export default function SocialSlide() {
          whileInView={{ opacity: 1, x: 0, rotateY: 0 }}
          transition={{ duration: 0.8 }}
          viewport={{ once: false, amount: 0.3 }}
-         className="w-full lg:w-[45%] h-[60vh] lg:h-[75vh] rounded-[3rem] overflow-hidden relative shadow-2xl border border-white/10"
+         className="w-full lg:w-[45%] h-[60vh] lg:h-[75vh] rounded-[3rem] overflow-hidden relative shadow-2xl border border-gray-900/10"
       >
         <img
           src={images.social}
           className="w-full h-full object-cover opacity-60 sepia-[.2] scale-105"
         />
-        <div className="absolute inset-0 bg-gradient-to-tr from-[#0d0c0c] via-[#0d0c0c]/40 to-transparent mix-blend-multiply"></div>
-        <div className="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-[black] to-transparent">
+        <div className="absolute inset-0 bg-gradient-to-tr from-black-matte via-black-matte/40 to-transparent"></div>
+        <div className="absolute inset-x-0 bottom-0 p-10 bg-gradient-to-t from-black-matte to-transparent">
           <div className="flex gap-4">
             {[colors.karn.blue, colors.karn.red, colors.karn.yellow, colors.karn.green, colors.karn.purple].map(
               (c, i) => (
@@ -29,7 +29,7 @@ export default function SocialSlide() {
               ),
             )}
           </div>
-          <p className="mt-6 text-white/50 text-sm font-heading tracking-widest uppercase">Multi-Platform Ecosystem</p>
+          <p className="mt-6 text-gray-900 text-sm font-heading tracking-widest uppercase">Multi-Platform Ecosystem</p>
         </div>
       </motion.div>
 
@@ -44,7 +44,7 @@ export default function SocialSlide() {
            className="text-5xl md:text-7xl font-heading font-light leading-[1.1] mb-12 tracking-tight"
         >
           Global Social <br />
-          <span className="font-medium text-white">Authority</span>
+          <span className="font-medium text-gray-900">Authority</span>
         </motion.h2>
 
         <motion.div initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }} className="flex gap-4 mb-12 flex-wrap">
@@ -57,7 +57,7 @@ export default function SocialSlide() {
           ].map((plat, i) => (
             <div
               key={i}
-              className="px-6 py-2.5 rounded-full border border-white/20 text-white/80 text-xs tracking-widest uppercase bg-white/5 shadow-lg"
+              className="px-6 py-2.5 rounded-full border border-gray-900/20 text-gray-900 text-xs tracking-widest uppercase bg-gray-900/5 shadow-lg"
               style={{ borderBottomColor: plat.c }}
             >
               {plat.n}
@@ -76,14 +76,14 @@ export default function SocialSlide() {
                initial={{ opacity: 0, x: 30 }}
                whileInView={{ opacity: 1, x: 0 }}
                transition={{ delay: 0.3 + (i * 0.1) }}
-               className="glass-panel p-6 rounded-2xl border border-white/5 relative overflow-hidden group"
+               className="glass-panel p-6 rounded-2xl border border-gray-900/5 relative overflow-hidden group"
              >
                 <div className="absolute top-0 right-0 w-2 h-full opacity-50" style={{ backgroundColor: item.c }}></div>
-                <h4 className="text-xl font-medium text-white mb-3 flex items-center gap-3">
+                <h4 className="text-xl font-medium text-gray-900 mb-3 flex items-center gap-3">
                   <span className="w-2.5 h-2.5 rounded-full shadow-[0_0_8px_currentColor]" style={{ backgroundColor: item.c, color: item.c }}></span>{" "}
                   {item.t}
                 </h4>
-                <p className="text-white/50 text-sm">{item.d}</p>
+                <p className="text-gray-900 text-sm">{item.d}</p>
              </motion.div>
           ))}
         </div>

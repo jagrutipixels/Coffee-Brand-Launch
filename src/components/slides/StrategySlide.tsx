@@ -26,7 +26,7 @@ export default function StrategySlide() {
         </div>
         <h2 className="text-5xl lg:text-7xl font-heading font-light leading-tight">
           Complete Business <br/>
-          <span className="font-medium text-white">Growth Ecosystem.</span>
+          <span className="font-medium text-gray-900">Growth Ecosystem.</span>
         </h2>
       </div>
 
@@ -40,16 +40,16 @@ export default function StrategySlide() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ delay: idx * 0.1, duration: 0.6 }}
-              className="glass-panel flex-1 min-w-[200px] h-48 rounded-[2rem] p-6 flex flex-col group hover:bg-white/5 transition-all duration-500 hover:-translate-y-2 border border-white/5 shadow-2xl relative overflow-hidden cursor-pointer"
+              className="glass-panel flex-1 min-w-[200px] h-48 rounded-[2rem] p-6 flex flex-col group hover:bg-gray-900/5 transition-all duration-500 hover:-translate-y-2 border border-gray-900/5 shadow-2xl relative overflow-hidden cursor-pointer"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-karn-blue/20 to-transparent rounded-bl-full -mr-4 -mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               
               {/* Default Content */}
               <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-6">
-                <span className="font-heading text-5xl font-light text-white/5 transition-colors block mb-auto mt-2">0{step.n}</span>
+                <span className="font-heading text-5xl font-light text-gray-900 transition-colors block mb-auto mt-2">0{step.n}</span>
                 <div>
-                   <h4 className="text-lg font-medium text-white/90">{step.t}</h4>
-                   <p className="text-white/40 text-xs mt-2">{step.desc}</p>
+                   <h4 className="text-lg font-medium text-gray-900/90">{step.t}</h4>
+                   <p className="text-gray-900 text-xs mt-2">{step.desc}</p>
                 </div>
               </div>
 
@@ -59,7 +59,7 @@ export default function StrategySlide() {
                    <div className="w-1.5 h-1.5 rounded-full bg-karn-blue"></div>
                    <h4 className="text-sm font-medium text-karn-blue">{step.t}</h4>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">{step.details}</p>
+                <p className="text-gray-900 text-sm leading-relaxed">{step.details}</p>
               </div>
             </motion.div>
           ))}
@@ -73,16 +73,16 @@ export default function StrategySlide() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ delay: (idx + 4) * 0.1, duration: 0.6 }}
-              className="glass-panel flex-1 min-w-[250px] h-48 rounded-[2rem] p-6 flex flex-col group hover:bg-white/5 transition-all duration-500 hover:-translate-y-2 border border-white/5 shadow-2xl relative overflow-hidden cursor-pointer"
+              className="glass-panel flex-1 min-w-[250px] h-48 rounded-[2rem] p-6 flex flex-col group hover:bg-gray-900/5 transition-all duration-500 hover:-translate-y-2 border border-gray-900/5 shadow-2xl relative overflow-hidden cursor-pointer"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-karn-purple/20 to-transparent rounded-bl-full -mr-4 -mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               
               {/* Default Content */}
               <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-6">
-                <span className="font-heading text-5xl font-light text-white/5 transition-colors block mb-auto mt-2">0{step.n}</span>
+                <span className="font-heading text-5xl font-light text-gray-900 transition-colors block mb-auto mt-2">0{step.n}</span>
                 <div>
-                   <h4 className="text-lg font-medium text-white/90">{step.t}</h4>
-                   <p className="text-white/40 text-xs mt-2">{step.desc}</p>
+                   <h4 className="text-lg font-medium text-gray-900/90">{step.t}</h4>
+                   <p className="text-gray-900 text-xs mt-2">{step.desc}</p>
                 </div>
               </div>
 
@@ -92,7 +92,7 @@ export default function StrategySlide() {
                    <div className="w-1.5 h-1.5 rounded-full bg-karn-purple"></div>
                    <h4 className="text-sm font-medium text-karn-purple">{step.t}</h4>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">{step.details}</p>
+                <p className="text-gray-900 text-sm leading-relaxed">{step.details}</p>
               </div>
             </motion.div>
           ))}
@@ -106,16 +106,16 @@ export default function StrategySlide() {
               whileInView={{ opacity: 1, y: 0 }}
               viewport={{ once: false, amount: 0.3 }}
               transition={{ delay: (idx + 7) * 0.1, duration: 0.6 }}
-              className="glass-panel flex-1 min-w-[250px] h-48 rounded-[2rem] p-6 flex flex-col group hover:bg-white/5 transition-all duration-500 hover:-translate-y-2 border border-white/5 shadow-2xl relative overflow-hidden cursor-pointer"
+              className="glass-panel flex-1 min-w-[250px] h-48 rounded-[2rem] p-6 flex flex-col group hover:bg-gray-900/5 transition-all duration-500 hover:-translate-y-2 border border-gray-900/5 shadow-2xl relative overflow-hidden cursor-pointer"
             >
               <div className="absolute top-0 right-0 w-32 h-32 bg-gradient-to-br from-karn-red/20 to-transparent rounded-bl-full -mr-4 -mt-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700"></div>
               
               {/* Default Content */}
               <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-6">
-                <span className="font-heading text-5xl font-light text-white/5 transition-colors block mb-auto mt-2">{step.n.length === 1 ? `0${step.n}` : step.n}</span>
+                <span className="font-heading text-5xl font-light text-gray-900 transition-colors block mb-auto mt-2">{step.n.length === 1 ? `0${step.n}` : step.n}</span>
                 <div>
-                   <h4 className="text-lg font-medium text-white/90">{step.t}</h4>
-                   <p className="text-white/40 text-xs mt-2">{step.desc}</p>
+                   <h4 className="text-lg font-medium text-gray-900/90">{step.t}</h4>
+                   <p className="text-gray-900 text-xs mt-2">{step.desc}</p>
                 </div>
               </div>
 
@@ -125,7 +125,7 @@ export default function StrategySlide() {
                    <div className="w-1.5 h-1.5 rounded-full bg-karn-red"></div>
                    <h4 className="text-sm font-medium text-karn-red">{step.t}</h4>
                 </div>
-                <p className="text-white/80 text-sm leading-relaxed">{step.details}</p>
+                <p className="text-gray-900 text-sm leading-relaxed">{step.details}</p>
               </div>
             </motion.div>
           ))}

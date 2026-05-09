@@ -44,20 +44,20 @@ export default function InvestmentSlide() {
            initial={{ opacity: 0, x: -30 }} whileInView={{ opacity: 1, x: 0 }} viewport={{ once: false }}
            className="col-span-1 lg:col-span-5 glass-panel rounded-3xl p-1 relative overflow-hidden"
          >
-           <div className="absolute inset-0 bg-gradient-to-br from-white/10 via-transparent to-transparent"></div>
-           <div className="relative z-10 w-full h-full rounded-[22px] bg-[#0d0c0c]/90 px-8 py-16 flex flex-col items-center justify-center text-center">
-              <div className="inline-block px-5 py-2 rounded-full border border-white/20 bg-white/5 text-white/90 text-xs font-heading tracking-[0.2em] uppercase mb-12 shadow-[0_0_20px_rgba(255,255,255,0.05)]">
+           <div className="absolute inset-0 bg-gradient-to-br from-gray-900/10 via-transparent to-transparent"></div>
+           <div className="relative z-10 w-full h-full rounded-[22px] bg-black-matte/90 px-8 py-16 flex flex-col items-center justify-center text-center">
+              <div className="inline-block px-5 py-2 rounded-full border border-gray-900/20 bg-gray-900/5 text-gray-900/90 text-xs font-heading tracking-[0.2em] uppercase mb-12 shadow-[0_0_20px_rgba(0,0,0,0.05)]">
                  Annual Brand Domination Retainer
               </div>
               <div className="flex items-start justify-center gap-2 mb-4">
-                 <span className="text-4xl text-white/40 font-light mt-1">₹</span>
-                 <span className="text-7xl lg:text-[7rem] font-heading font-medium text-white tracking-tighter leading-none">2.40</span>
-                 <span className="text-3xl text-white/40 font-light mt-auto mb-2">Cr</span>
+                 <span className="text-4xl text-gray-900 font-light mt-1">₹</span>
+                 <span className="text-7xl lg:text-[7rem] font-heading font-medium text-gray-900 tracking-tighter leading-none">2.40</span>
+                 <span className="text-3xl text-gray-900 font-light mt-auto mb-2">Cr</span>
               </div>
-              <p className="text-white/40 tracking-widest text-sm uppercase mb-12">Per Annum (Billed Quarterly/Monthly)</p>
+              <p className="text-gray-900 tracking-widest text-sm uppercase mb-12">Per Annum (Billed Quarterly/Monthly)</p>
               
-              <div className="w-full p-6 rounded-2xl bg-white/5 border border-white/10">
-                 <p className="text-white/80 text-sm leading-relaxed">Dedicated 12+ person unit operating as your in-house CMO, media production, and digital growth agency.</p>
+              <div className="w-full p-6 rounded-2xl bg-gray-900/5 border border-gray-900/10">
+                 <p className="text-gray-900 text-sm leading-relaxed">Dedicated 12+ person unit operating as your in-house CMO, media production, and digital growth agency.</p>
               </div>
            </div>
          </motion.div>
@@ -67,19 +67,19 @@ export default function InvestmentSlide() {
               <motion.div 
                 key={i}
                 initial={{ opacity: 0, y: 30 }} whileInView={{ opacity: 1, y: 0 }} viewport={{ once: false }} transition={{ delay: 0.1 * i }}
-                className="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-white/20 transition-all duration-300"
+                className="glass-panel p-8 rounded-3xl relative overflow-hidden group hover:border-gray-900/20 transition-all duration-300"
               >
                 {/* Embedded Karn Color Accent */}
                 <div className="absolute top-0 right-0 w-32 h-32 rounded-bl-full opacity-10 group-hover:opacity-20 transition-opacity duration-500" style={{ backgroundImage: `radial-gradient(circle at top right, ${pillar.color}, transparent)` }}></div>
                 
-                <h3 className="text-xl font-heading font-medium text-white mb-6 flex items-center gap-3">
+                <h3 className="text-xl font-heading font-medium text-gray-900 mb-6 flex items-center gap-3">
                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: pillar.color, boxShadow: `0 0 10px ${pillar.color}` }}></div>
                    {pillar.title}
                 </h3>
                 
                 <ul className="space-y-4">
                   {pillar.items.map((item, j) => (
-                    <li key={j} className="flex gap-3 items-start text-white/60 text-sm group-hover:text-white/80 transition-colors">
+                    <li key={j} className="flex gap-3 items-start text-gray-900/90 text-sm group-hover:text-gray-900 transition-colors">
                       <svg className="w-4 h-4 shrink-0 mt-0.5 opacity-50" style={{ color: pillar.color }} fill="none" viewBox="0 0 24 24" stroke="currentColor">
                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
                       </svg>

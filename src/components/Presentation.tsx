@@ -112,9 +112,9 @@ export default function Presentation() {
       />
       
       {/* Header Navigation */}
-      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-panel rounded-full px-8 py-4 hidden md:flex items-center gap-8 shadow-2xl border border-white/10">
+      <header className="fixed top-6 left-1/2 -translate-x-1/2 z-50 glass-panel rounded-full px-8 py-4 hidden md:flex items-center gap-8 shadow-2xl border border-gray-900/10">
         <div className="mr-4 hidden lg:block">
-          <img src="https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/5faeae4bc9be9d970fddfab69431165052cfe4d8/KMW-White-01.png" alt="KARN Marketing Warfare" className="h-6 object-contain" />
+          <img src="https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/5faeae4bc9be9d970fddfab69431165052cfe4d8/KMW-White-01.png" alt="KARN Marketing Warfare" className="h-6 object-contain invert" />
         </div>
         {navLinks.map((link) => (
            <button 
@@ -126,7 +126,7 @@ export default function Presentation() {
                  document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
                }
              }}
-             className="text-[10px] sm:text-xs uppercase tracking-widest text-white/50 hover:text-white hover:text-shadow-glow transition-all"
+             className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-900 hover:text-gray-900 hover:text-shadow-glow transition-all"
            >
              {link.label}
            </button>
@@ -144,10 +144,10 @@ export default function Presentation() {
             window.scrollTo({ top: 0, behavior: 'smooth' });
           }
         }}
-        className="fixed bottom-8 right-8 z-50 w-12 h-12 glass-panel rounded-full flex items-center justify-center hover:bg-white/10 transition-colors pointer-events-auto border border-white/10 shadow-lg group"
+        className="fixed bottom-8 right-8 z-50 w-12 h-12 glass-panel rounded-full flex items-center justify-center hover:bg-gray-900/10 transition-colors pointer-events-auto border border-gray-900/10 shadow-lg group"
         style={{ pointerEvents: showScrollTop ? 'auto' : 'none' }}
       >
-        <ChevronUp size={20} className="text-white/60 group-hover:text-white transition-colors" />
+        <ChevronUp size={20} className="text-gray-900/90 group-hover:text-gray-900 transition-colors" />
       </motion.button>
 
       {/* Content Container */}
@@ -173,7 +173,7 @@ export default function Presentation() {
       </main>
 
       {/* Ambient Background Glows featuring K.A.R.N Colors */}
-      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-screen opacity-40">
+      <div className="fixed inset-0 pointer-events-none z-0 overflow-hidden mix-blend-multiply opacity-40">
         <motion.div 
           animate={{ x: ['-20%', '20%', '-20%'], y: ['-20%', '20%', '-20%'] }} transition={{ duration: 25, repeat: Infinity, ease: 'linear' }}
           className="absolute top-0 left-[-10%] w-[50vw] h-[50vw] bg-karn-blue/10 rounded-full blur-[150px]"

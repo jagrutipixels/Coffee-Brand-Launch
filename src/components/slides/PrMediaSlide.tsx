@@ -18,10 +18,10 @@ export default function PrMediaSlide() {
                className="text-5xl md:text-7xl font-heading font-light leading-[1.1] mb-8 tracking-tight"
             >
               Building Industry <br />
-              <span className="font-medium text-white">Trust & Authority</span>
+              <span className="font-medium text-gray-900">Trust & Authority</span>
             </motion.h2>
 
-            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-white/60 mb-12 text-lg leading-relaxed max-w-md">
+            <motion.p initial={{ opacity: 0 }} whileInView={{ opacity: 1 }} transition={{ delay: 0.2 }} className="text-gray-900/90 mb-12 text-lg leading-relaxed max-w-md">
               We position your brand and leadership team as the definitive authority in the global coffee manufacturing space.
             </motion.p>
             
@@ -53,16 +53,16 @@ export default function PrMediaSlide() {
                    initial={{ opacity: 0, y: 20 }}
                    whileInView={{ opacity: 1, y: 0 }}
                    transition={{ delay: 0.2 + (i * 0.1) }}
-                   className="glass-panel p-6 rounded-[1.5rem] border border-white/5 flex gap-5 items-center group hover:bg-white/5 transition-all"
+                   className="glass-panel p-6 rounded-[1.5rem] border border-gray-900/5 flex gap-5 items-center group hover:bg-gray-900/5 transition-all"
                 >
-                  <div className="w-12 h-12 rounded-full glass-panel border border-white/10 flex items-center justify-center shrink-0">
+                  <div className="w-12 h-12 rounded-full glass-panel border border-gray-900/10 flex items-center justify-center shrink-0">
                      <div className="w-3 h-3 rounded-full" style={{ backgroundColor: item.c, boxShadow: `0 0 12px ${item.c}` }}></div>
                   </div>
                   <div>
-                    <h4 className="text-lg font-heading font-medium text-white mb-1 group-hover:text-white transition-colors">
+                    <h4 className="text-lg font-heading font-medium text-gray-900 mb-1 group-hover:text-gray-900 transition-colors">
                       {item.t}
                     </h4>
-                    <p className="text-sm text-white/50 leading-relaxed pr-4">{item.d}</p>
+                    <p className="text-sm text-gray-900 leading-relaxed pr-4">{item.d}</p>
                   </div>
                 </motion.div>
               ))}
@@ -77,20 +77,20 @@ export default function PrMediaSlide() {
              className="w-full lg:w-1/2 h-full min-h-[600px] flex flex-col items-center justify-center relative"
           >
             <div className="absolute inset-0 bg-[radial-gradient(ellipse_at_center,_var(--tw-gradient-stops))] from-karn-blue/10 via-transparent to-transparent -z-10"></div>
-            <div className="w-full feature-panel relative glass-panel p-3 rounded-[3rem] shadow-2xl border border-white/10 group h-full max-h-[700px]">
+            <div className="w-full feature-panel relative glass-panel p-3 rounded-[3rem] shadow-2xl border border-gray-900/10 group h-full max-h-[700px]">
               <div className="w-full h-full relative overflow-hidden rounded-[2.5rem]">
                 <img
                   src={images.boardroom}
                   className="w-full h-full object-cover filter contrast-110 opacity-90 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s]"
                   alt="Boardroom"
                 />
-                <div className="absolute inset-0 bg-gradient-to-tr from-[#0d0c0c]/90 via-[#0d0c0c]/40 to-transparent z-10"></div>
+                <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/90 via-black-matte/40 to-transparent z-10"></div>
                 <div className="absolute inset-0 p-12 flex flex-col justify-end z-20 bg-gradient-to-t from-black-matte via-black-matte/50 to-transparent">
                   <div className="w-12 h-[3px] bg-karn-blue mb-6 shadow-[0_0_10px_#2563EB]"></div>
-                  <h3 className="font-heading text-4xl text-white mb-4 tracking-tight">
+                  <h3 className="font-heading text-4xl text-gray-900 mb-4 tracking-tight">
                     Authoritative Placements
                   </h3>
-                  <p className="text-white/70 max-w-sm text-lg">
+                  <p className="text-gray-900 max-w-sm text-lg">
                     We secure coverage where it matters, putting your brand in front of targeted institutional buyers.
                   </p>
                 </div>

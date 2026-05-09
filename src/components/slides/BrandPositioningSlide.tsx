@@ -20,10 +20,10 @@ export default function BrandPositioningSlide() {
             className="text-5xl md:text-7xl font-heading font-light leading-[1.1] mb-12 tracking-tight"
           >
             Building A Premium <br/>
-            <span className="font-medium text-white">Manufacturing Identity.</span>
+            <span className="font-medium text-gray-900">Manufacturing Identity.</span>
           </motion.h2>
           
-          <div className="space-y-8 pl-4 border-l border-white/5">
+          <div className="space-y-8 pl-4 border-l border-gray-900/5">
             {[
               { title: 'Global Identity Architecture', desc: 'Crafting a visual and tonal language that instantly competes with established multinationals.', c: colors.karn.red },
               { title: 'Manufacturing Authority', desc: 'Highlighting extreme scale, clinical hygiene, and proprietary roasting technology.', c: colors.karn.blue },
@@ -40,8 +40,8 @@ export default function BrandPositioningSlide() {
               >
                  <div className="absolute -left-[23px] top-2 w-2 h-2 rounded-full transition-transform group-hover:scale-150" style={{ backgroundColor: item.c, boxShadow: `0 0 10px ${item.c}` }}></div>
                  <div>
-                    <h4 className="text-xl font-heading font-medium text-white/90 mb-2 group-hover:translate-x-2 transition-transform">{item.title}</h4>
-                    <p className="text-white/50 text-sm leading-relaxed max-w-md">{item.desc}</p>
+                    <h4 className="text-xl font-heading font-medium text-gray-900/90 mb-2 group-hover:translate-x-2 transition-transform">{item.title}</h4>
+                    <p className="text-gray-900 text-sm leading-relaxed max-w-md">{item.desc}</p>
                  </div>
               </motion.div>
             ))}
@@ -53,15 +53,15 @@ export default function BrandPositioningSlide() {
           whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
           viewport={{ once: false, amount: 0.3 }}
           transition={{ duration: 1 }}
-          className="h-[50vh] lg:h-[70vh] rounded-[3rem] overflow-hidden relative border border-white/5 shadow-2xl group order-1 lg:order-2"
+          className="h-[50vh] lg:h-[70vh] rounded-[3rem] overflow-hidden relative border border-gray-900/5 shadow-2xl group order-1 lg:order-2"
         >
           <img src={images.espresso} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s] ease-out filter contrast-110" />
           <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/30 to-transparent"></div>
           
           <div className="absolute bottom-12 left-12 z-20">
              <div className="w-12 h-[3px] bg-karn-red mb-6 shadow-[0_0_10px_#DC2626]"></div>
-             <p className="text-white text-4xl font-heading tracking-tight mb-2 block font-medium">Quality at Scale.</p>
-             <p className="text-white/80 tracking-widest text-xs uppercase font-medium">Integrity in every batch</p>
+             <p className="text-gray-900 text-4xl font-heading tracking-tight mb-2 block font-medium">Quality at Scale.</p>
+             <p className="text-gray-900 tracking-widest text-xs uppercase font-medium">Integrity in every batch</p>
           </div>
         </motion.div>
       </div>

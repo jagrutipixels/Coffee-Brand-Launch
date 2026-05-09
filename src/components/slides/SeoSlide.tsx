@@ -16,7 +16,7 @@ export default function SeoSlide() {
            className="text-5xl md:text-7xl font-heading font-light leading-[1.1] mb-12 tracking-tight"
         >
           Organic Market <br />
-          <span className="font-medium text-white">Domination.</span>
+          <span className="font-medium text-gray-900">Domination.</span>
         </motion.h2>
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
@@ -34,18 +34,18 @@ export default function SeoSlide() {
               transition={{ delay: 0.2 + (i * 0.1) }}
               viewport={{ once: false, amount: 0.5 }}
               key={i}
-              className="glass-panel rounded-[1.5rem] border-l-[4px] relative overflow-hidden group hover:bg-white/5 transition-colors min-h-[160px] cursor-pointer"
+              className="glass-panel rounded-[1.5rem] border-l-[4px] relative overflow-hidden group hover:bg-gray-900/5 transition-colors min-h-[160px] cursor-pointer"
               style={{ borderLeftColor: item.c }}
             >
               <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-10 blur-[20px] transition-opacity" style={{ backgroundColor: item.c }}></div>
               
               {/* Default Content */}
               <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-6">
-                <span className="font-heading text-white/20 text-3xl font-light mb-3 block group-hover:text-white/40 transition-colors">
+                <span className="font-heading text-gray-900 text-3xl font-light mb-3 block group-hover:text-gray-900 transition-colors">
                   {item.i}
                 </span>
-                <h4 className="text-xl font-medium text-white/90 mb-2">{item.t}</h4>
-                <p className="text-white/50 text-xs leading-relaxed">{item.d}</p>
+                <h4 className="text-xl font-medium text-gray-900/90 mb-2">{item.t}</h4>
+                <p className="text-gray-900 text-xs leading-relaxed">{item.d}</p>
               </div>
 
               {/* Hover Details Content */}
@@ -57,7 +57,7 @@ export default function SeoSlide() {
                    <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.c }}></div>
                    <h4 className="text-xs font-medium uppercase tracking-wider" style={{ color: item.c }}>{item.t}</h4>
                 </div>
-                <p className="text-white/90 text-sm leading-relaxed">{item.details}</p>
+                <p className="text-gray-900/90 text-sm leading-relaxed">{item.details}</p>
               </div>
             </motion.div>
           ))}
@@ -69,20 +69,20 @@ export default function SeoSlide() {
          whileInView={{ opacity: 1, scale: 1 }}
          transition={{ duration: 0.8 }}
          viewport={{ once: false, amount: 0.3 }}
-         className="w-full lg:w-[45%] h-[50vh] lg:h-[75vh] rounded-[3rem] overflow-hidden relative glass-panel border border-white/5 flex flex-col p-4 shadow-2xl"
+         className="w-full lg:w-[45%] h-[50vh] lg:h-[75vh] rounded-[3rem] overflow-hidden relative glass-panel border border-gray-900/5 flex flex-col p-4 shadow-2xl"
       >
         <div className="w-full h-full rounded-[2.5rem] overflow-hidden relative">
            <img
              src={images.dashboard}
              className="w-full h-full object-cover opacity-60 filter contrast-125 sepia-[.2] scale-105"
            />
-           <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/90 via-[#16A34A]/10 to-transparent mix-blend-multiply"></div>
+           <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/90 via-[#16A34A]/10 to-transparent"></div>
            <div className="absolute inset-0 bg-black-matte/40"></div>
            
            <div className="absolute inset-0 p-8 flex flex-col justify-end">
               <div className="space-y-4 w-full">
                  {[85, 92, 78].map((w, i) => (
-                    <div key={i} className="w-full bg-white/5 h-2 rounded-full overflow-hidden">
+                    <div key={i} className="w-full bg-gray-900/5 h-2 rounded-full overflow-hidden">
                        <motion.div 
                           initial={{ width: 0 }}
                           whileInView={{ width: `${w}%` }}
@@ -92,7 +92,7 @@ export default function SeoSlide() {
                        ></motion.div>
                     </div>
                  ))}
-                 <p className="text-white/40 text-xs font-mono mt-4 uppercase tracking-wider">Search Impression Growth (12mo Forward)</p>
+                 <p className="text-gray-900 text-xs font-mono mt-4 uppercase tracking-wider">Search Impression Growth (12mo Forward)</p>
               </div>
            </div>
         </div>

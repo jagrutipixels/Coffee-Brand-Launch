@@ -50,7 +50,7 @@ export default function TargetAudienceSlide() {
            className="text-5xl md:text-7xl font-heading font-light leading-tight tracking-tight"
         >
           High Net-Worth <br />
-          <span className="font-medium text-white">Tiered Acquisition</span>
+          <span className="font-medium text-gray-900">Tiered Acquisition</span>
         </motion.h2>
       </div>
 
@@ -62,24 +62,24 @@ export default function TargetAudienceSlide() {
             whileInView={{ opacity: 1, y: 0 }}
             viewport={{ once: false, amount: 0.3 }}
             transition={{ delay: i * 0.15, duration: 0.6 }}
-            className="glass-panel rounded-[2rem] p-8 border border-white/5 hover:border-white/20 transition-all relative overflow-hidden group shadow-2xl"
+            className="glass-panel rounded-[2rem] p-8 border border-gray-900/5 hover:border-gray-900/20 transition-all relative overflow-hidden group shadow-2xl"
           >
             <div className="absolute top-0 left-0 w-full h-[3px] transform origin-left transition-transform duration-700" style={{ backgroundColor: tier.color }}></div>
             <div className="absolute top-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 blur-[30px] rounded-full transition-opacity" style={{ backgroundColor: tier.color }}></div>
             
             <div className="mb-8">
-              <h3 className="text-xl font-heading font-medium text-white mb-2">{tier.tier}</h3>
-              <p className="text-white/50 text-xs leading-relaxed uppercase tracking-wider">{tier.desc}</p>
+              <h3 className="text-xl font-heading font-medium text-gray-900 mb-2">{tier.tier}</h3>
+              <p className="text-gray-900 text-xs leading-relaxed uppercase tracking-wider">{tier.desc}</p>
             </div>
 
             <div className="space-y-4 relative z-10">
                {tier.targets.map((tgt, idx) => (
-                  <div key={idx} className="bg-black-matte/40 rounded-xl p-4 border border-white/5 group/tgt hover:bg-white/5 transition-colors">
+                  <div key={idx} className="bg-black-matte/40 rounded-xl p-4 border border-gray-900/5 group/tgt hover:bg-gray-900/5 transition-colors">
                      <div className="flex items-center gap-3 mb-1">
                         <div className="w-1.5 h-1.5 rounded-full shadow-[0_0_8px_currentColor]" style={{ backgroundColor: tier.color, color: tier.color }}></div>
-                        <span className="text-white/90 text-sm font-medium group-hover/tgt:text-white">{tgt.name}</span>
+                        <span className="text-gray-900/90 text-sm font-medium group-hover/tgt:text-gray-900">{tgt.name}</span>
                      </div>
-                     <p className="text-white/40 text-xs pl-4">{tgt.focus}</p>
+                     <p className="text-gray-900 text-xs pl-4">{tgt.focus}</p>
                   </div>
                ))}
             </div>

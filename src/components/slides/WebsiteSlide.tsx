@@ -18,7 +18,7 @@ export default function WebsiteSlide() {
            className="text-4xl md:text-6xl font-heading font-light leading-[1.1] mb-12"
         >
           Enterprise-Level <br/>
-          <span className="font-medium text-white">Digital Infrastructure.</span>
+          <span className="font-medium text-gray-900">Digital Infrastructure.</span>
         </motion.h2>
         
         <div className="grid grid-cols-2 gap-x-8 gap-y-12">
@@ -38,9 +38,9 @@ export default function WebsiteSlide() {
                key={i} 
                className="flex flex-col gap-2 relative group"
              >
-               <div className="absolute -left-5 top-2 w-1.5 h-1.5 rounded-full ring-2 ring-transparent group-hover:ring-white/30 transition-all font-mono" style={{ backgroundColor: item.c, boxShadow: `0 0 10px ${item.c}` }}></div>
-               <h4 className="text-xl font-medium text-white/90 group-hover:translate-x-1 transition-transform">{item.t}</h4>
-               <p className="text-white/50 text-sm leading-relaxed">{item.desc}</p>
+               <div className="absolute -left-5 top-2 w-1.5 h-1.5 rounded-full ring-2 ring-transparent group-hover:ring-gray-900/30 transition-all font-mono" style={{ backgroundColor: item.c, boxShadow: `0 0 10px ${item.c}` }}></div>
+               <h4 className="text-xl font-medium text-gray-900/90 group-hover:translate-x-1 transition-transform">{item.t}</h4>
+               <p className="text-gray-900 text-sm leading-relaxed">{item.desc}</p>
              </motion.div>
            ))}
         </div>
@@ -51,7 +51,7 @@ export default function WebsiteSlide() {
          whileInView={{ opacity: 1, scale: 1, rotate: 0 }}
          viewport={{ once: false, amount: 0.3 }}
          transition={{ duration: 1 }}
-         className="w-full md:w-[45%] h-[75vh] rounded-[2rem] overflow-hidden glass-panel border border-white/5 p-4 shadow-2xl relative group"
+         className="w-full md:w-[45%] h-[75vh] rounded-[2rem] overflow-hidden glass-panel border border-gray-900/5 p-4 shadow-2xl relative group"
       >
          <div className="w-full h-full rounded-xl overflow-hidden relative">
             <img src={images.network} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-[2s] sepia-[.2]" alt="Digital Infrastructure" />
