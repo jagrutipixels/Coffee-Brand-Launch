@@ -1,6 +1,6 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { motion, useScroll, useSpring, useMotionValueEvent } from 'motion/react';
-import { ChevronUp } from 'lucide-react';
+import { ChevronUp, Menu, X } from 'lucide-react';
 import Lenis from '@studio-freight/lenis';
 import { cn } from '@/lib/utils';
 import CoverSlide from './slides/CoverSlide';
@@ -24,6 +24,7 @@ import InvestmentSlide from './slides/InvestmentSlide';
 import WhyKarnSlide from './slides/WhyKarnSlide';
 import PortfolioSlide from './slides/PortfolioSlide';
 import ClosingSlide from './slides/ClosingSlide';
+import { AnimatePresence } from 'motion/react';
 
 const sections = [
   { id: 'cover', Component: CoverSlide },
@@ -61,6 +62,7 @@ const navLinks = [
 export default function Presentation() {
   const [mousePos, setMousePos] = useState({ x: 0, y: 0 });
   const [showScrollTop, setShowScrollTop] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const { scrollYProgress } = useScroll();
   const scaleX = useSpring(scrollYProgress, {
     stiffness: 100,
@@ -100,8 +102,17 @@ export default function Presentation() {
     };
   }, []);
 
+  const scrollToSection = (id: string) => {
+    if (lenisRef.current) {
+      lenisRef.current.scrollTo(`#${id}`, { offset: -100 });
+    } else {
+      document.getElementById(id)?.scrollIntoView({ behavior: 'smooth' });
+    }
+    setIsMobileMenuOpen(false);
+  };
+
   return (
-    <div id="presentation-root" className="relative w-full bg-black-matte text-cream font-sans">
+    <div id="presentation-root" className="relative w-full bg-black-matte text-cream font-sans overflow-x-hidden">
       {/* Noise Overlay */}
       <div className="noise-overlay"></div>
 
@@ -119,19 +130,49 @@ export default function Presentation() {
         {navLinks.map((link) => (
            <button 
              key={link.id} 
-             onClick={() => {
-               if (lenisRef.current) {
-                 lenisRef.current.scrollTo(`#${link.id}`, { offset: -100 });
-               } else {
-                 document.getElementById(link.id)?.scrollIntoView({ behavior: 'smooth' });
-               }
-             }}
-             className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-900 hover:text-gray-900 hover:text-shadow-glow transition-all"
+             onClick={() => scrollToSection(link.id)}
+             className="text-[10px] sm:text-xs uppercase tracking-widest text-gray-900 hover:text-gray-900 hover:text-shadow-glow transition-all font-medium"
            >
              {link.label}
            </button>
         ))}
       </header>
+
+      {/* Mobile Nav Trigger */}
+      <button 
+        onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+        className="fixed top-6 right-6 z-50 md:hidden w-12 h-12 glass-panel rounded-full flex items-center justify-center border border-gray-900/10 shadow-lg no-print"
+      >
+        {isMobileMenuOpen ? <X size={20} className="text-gray-900" /> : <Menu size={20} className="text-gray-900" />}
+      </button>
+
+      {/* Mobile Menu Overlay */}
+      <AnimatePresence>
+        {isMobileMenuOpen && (
+          <motion.div
+            initial={{ opacity: 0, x: '100%' }}
+            animate={{ opacity: 1, x: 0 }}
+            exit={{ opacity: 0, x: '100%' }}
+            transition={{ type: 'spring', damping: 25, stiffness: 200 }}
+            className="fixed inset-0 z-40 bg-black-matte/95 backdrop-blur-xl md:hidden flex flex-col items-center justify-center p-8 no-print"
+          >
+            <div className="flex flex-col gap-8 text-center">
+              {navLinks.map((link) => (
+                <button
+                  key={link.id}
+                  onClick={() => scrollToSection(link.id)}
+                  className="text-2xl font-heading font-medium text-gray-900 uppercase tracking-widest"
+                >
+                  {link.label}
+                </button>
+              ))}
+            </div>
+            <div className="mt-20">
+              <img src="https://raw.githubusercontent.com/jagrutipixels/Coffee-Brand-Launch/5faeae4bc9be9d970fddfab69431165052cfe4d8/KMW-White-01.png" alt="KARN Marketing Warfare" className="h-8 object-contain invert opacity-50" referrerPolicy="no-referrer" />
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
       
       {/* Go to Top Button */}
       <motion.button 
@@ -158,11 +199,11 @@ export default function Presentation() {
             <motion.section 
               key={section.id} 
               id={section.id}
-              initial={{ opacity: 0, y: 100 }}
+              initial={{ opacity: 0, y: 50 }}
               whileInView={{ opacity: 1, y: 0 }}
-              viewport={{ once: false, amount: 0.2 }}
+              viewport={{ once: true, amount: 0.1 }}
               transition={{ duration: 0.8, ease: [0.16, 1, 0.3, 1] }}
-              className="w-full flex items-center justify-center px-6 md:px-12 lg:px-24 py-20 relative"
+              className="w-full flex items-center justify-center px-4 sm:px-6 md:px-12 lg:px-24 py-12 md:py-24 relative min-h-screen lg:min-h-0"
             >
               <div className="w-full max-w-[1400px]">
                 <SectionComponent />
