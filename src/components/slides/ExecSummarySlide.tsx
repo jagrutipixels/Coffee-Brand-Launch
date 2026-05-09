@@ -65,9 +65,8 @@ export default function ExecSummarySlide() {
             className="w-full h-full rounded-[3rem] overflow-hidden relative shadow-2xl border border-white/5 group"
           >
              <div className="absolute inset-0 bg-black-matte z-0"></div>
-             <img src={images.beans} alt="Premium Coffee" className="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-[3s] filter contrast-125 sepia-[.2]" />
-             <div className="absolute inset-0 bg-gradient-to-tr from-black-matte/90 via-transparent to-transparent z-10 mix-blend-multiply"></div>
-             <div className="absolute inset-0 bg-gradient-to-t from-black-matte to-transparent z-10 opacity-60"></div>
+             <img src={images.beans} alt="Premium Coffee" className="absolute inset-0 w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s]" />
+             <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/30 to-transparent z-10"></div>
              
              {/* Floating UI Elements inside Image */}
              <motion.div 
@@ -75,14 +74,14 @@ export default function ExecSummarySlide() {
                whileInView={{ opacity: 1, x: 0 }}
                viewport={{ once: false, amount: 0.8 }}
                transition={{ delay: 0.4 }}
-               className="absolute bottom-10 left-10 glass-panel p-6 rounded-2xl max-w-[280px] backdrop-blur-xl border border-white/10 z-20"
+               className="absolute bottom-10 left-10 glass-panel p-6 rounded-2xl max-w-[280px] backdrop-blur-xl border border-white/10 z-20 shadow-2xl"
              >
                 <div className="flex items-center gap-3 mb-2">
                    <div className="w-2 h-2 rounded-full bg-karn-green shadow-[0_0_10px_currentColor] animate-pulse" style={{ color: colors.karn.green }}></div>
-                   <span className="text-xs uppercase tracking-wider text-white/70 font-heading">Global Capacity</span>
+                   <span className="text-xs uppercase tracking-wider text-white/90 font-heading">Global Capacity</span>
                 </div>
                 <div className="text-3xl font-heading font-medium text-white mb-1">100% Volume</div>
-                <div className="text-white/50 text-xs">Export-ready infrastructure</div>
+                <div className="text-white/80 text-xs">Export-ready infrastructure</div>
              </motion.div>
           </motion.div>
        </div>

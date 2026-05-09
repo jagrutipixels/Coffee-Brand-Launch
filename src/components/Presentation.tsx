@@ -22,6 +22,7 @@ import ReportingSlide from './slides/ReportingSlide';
 import OutcomesSlide from './slides/OutcomesSlide';
 import InvestmentSlide from './slides/InvestmentSlide';
 import WhyKarnSlide from './slides/WhyKarnSlide';
+import PortfolioSlide from './slides/PortfolioSlide';
 import ClosingSlide from './slides/ClosingSlide';
 
 const sections = [
@@ -44,6 +45,7 @@ const sections = [
   { id: 'outcomes', Component: OutcomesSlide },
   { id: 'investment', Component: InvestmentSlide },
   { id: 'whykarn', Component: WhyKarnSlide },
+  { id: 'portfolio', Component: PortfolioSlide },
   { id: 'closing', Component: ClosingSlide },
 ];
 
@@ -52,6 +54,7 @@ const navLinks = [
   { label: 'Market', id: 'market' },
   { label: 'Strategy', id: 'strategy' },
   { label: 'Reporting', id: 'reporting' },
+  { label: 'Portfolio', id: 'portfolio' },
   { label: 'Investment', id: 'investment' },
 ];
 

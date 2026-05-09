@@ -21,12 +21,12 @@ export default function SeoSlide() {
 
         <div className="grid grid-cols-1 sm:grid-cols-2 gap-6 content-start">
           {[
-            { t: "Technical Infrastructure", d: "Sub-second load times and flawless indexing.", c: colors.karn.blue, i: "01" },
-            { t: "Intent Hijacking", d: "Ranking for high-value competitor search terms.", c: colors.karn.red, i: "02" },
-            { t: "Enterprise Content", d: "Long-form editorial scaling domain authority.", c: colors.karn.yellow, i: "03" },
-            { t: "B2B Keyword Matrix", d: "Targeting 'wholesale', 'manufacturer', 'distributor'.", c: colors.karn.green, i: "04" },
-            { t: "Domestic Dominance", d: "Owning the search landscape across India.", c: colors.karn.purple, i: "05" },
-            { t: "Global Corridors", d: "Targeting buyers in Europe, Middle East, NA.", c: colors.karn.yellow, i: "06" },
+            { t: "Technical Infrastructure", d: "Sub-second load times and flawless indexing.", details: "Leveraging edge networks ensuring Google scores the site perfectly for core web vitals.", c: colors.karn.blue, i: "01" },
+            { t: "Intent Hijacking", d: "Ranking for high-value competitor search terms.", details: "Targeting legacy manufacturers and diverting traffic to our modernized value proposition.", c: colors.karn.red, i: "02" },
+            { t: "Enterprise Content", d: "Long-form editorial scaling domain authority.", details: "Publishing deeply researched 3,000+ word whitepapers on global coffee logistics.", c: colors.karn.yellow, i: "03" },
+            { t: "B2B Keyword Matrix", d: "Targeting 'wholesale', 'manufacturer', 'distributor'.", details: "Creating hundreds of programmatic landing pages tailored for high-intent B2B search.", c: colors.karn.green, i: "04" },
+            { t: "Domestic Dominance", d: "Owning the search landscape across India.", details: "Inescapable presence when domestic chains search for private label roasting partners.", c: colors.karn.purple, i: "05" },
+            { t: "Global Corridors", d: "Targeting buyers in Europe, Middle East, NA.", details: "Deploying multi-lingual SEO sub-directories capturing institutional buyers globally.", c: colors.karn.yellow, i: "06" },
           ].map((item, i) => (
             <motion.div
               initial={{ opacity: 0, y: 20 }}
@@ -34,15 +34,31 @@ export default function SeoSlide() {
               transition={{ delay: 0.2 + (i * 0.1) }}
               viewport={{ once: false, amount: 0.5 }}
               key={i}
-              className="glass-panel p-6 rounded-[1.5rem] border-l-[4px] relative overflow-hidden group hover:bg-white/5 transition-colors"
+              className="glass-panel rounded-[1.5rem] border-l-[4px] relative overflow-hidden group hover:bg-white/5 transition-colors min-h-[160px] cursor-pointer"
               style={{ borderLeftColor: item.c }}
             >
               <div className="absolute top-0 right-0 w-16 h-16 opacity-0 group-hover:opacity-10 blur-[20px] transition-opacity" style={{ backgroundColor: item.c }}></div>
-              <span className="font-heading text-white/20 text-3xl font-light mb-3 block group-hover:text-white/40 transition-colors">
-                {item.i}
-              </span>
-              <h4 className="text-xl font-medium text-white/90 mb-2">{item.t}</h4>
-              <p className="text-white/50 text-xs leading-relaxed">{item.d}</p>
+              
+              {/* Default Content */}
+              <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-6">
+                <span className="font-heading text-white/20 text-3xl font-light mb-3 block group-hover:text-white/40 transition-colors">
+                  {item.i}
+                </span>
+                <h4 className="text-xl font-medium text-white/90 mb-2">{item.t}</h4>
+                <p className="text-white/50 text-xs leading-relaxed">{item.d}</p>
+              </div>
+
+              {/* Hover Details Content */}
+              <div 
+                className="flex flex-col justify-center h-full absolute inset-0 p-6 backdrop-blur-sm opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500"
+                style={{ backgroundColor: `${item.c}10` }}
+              >
+                <div className="flex items-center gap-2 mb-2">
+                   <div className="w-1.5 h-1.5 rounded-full" style={{ backgroundColor: item.c }}></div>
+                   <h4 className="text-xs font-medium uppercase tracking-wider" style={{ color: item.c }}>{item.t}</h4>
+                </div>
+                <p className="text-white/90 text-sm leading-relaxed">{item.details}</p>
+              </div>
             </motion.div>
           ))}
         </div>

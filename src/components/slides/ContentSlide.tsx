@@ -26,12 +26,12 @@ export default function ContentSlide() {
 
       <div className="flex-1 relative z-10 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 pb-12 w-full max-w-7xl mx-auto">
         {[
-          { t: "Cinematic Brand Films", d: "High-budget visual storytelling establishing market dominance.", c: colors.karn.red },
-          { t: "Documentary Series", d: "Inside the facility: showcasing precision, scale, and trust.", c: colors.karn.blue },
-          { t: "Viral Short-Form", d: "Attention-grabbing cuts designed for B2B LinkedIn & Reels.", c: colors.karn.yellow },
-          { t: "Executive Presence", d: "Positioning leadership as industry visionaries.", c: colors.karn.green },
-          { t: "Product Cinematography", d: "Framerates and lighting that elevate coffee to art.", c: colors.karn.purple },
-          { t: "3D Motion Graphics", d: "Visualizing processes and scale beyond physical limits.", c: "#ffffff" },
+          { t: "Cinematic Brand Films", d: "High-budget visual storytelling establishing market dominance.", details: "Hero pieces for the homepage that frame the facility like a cutting-edge laboratory, focusing on scale and cleanliness.", c: colors.karn.red },
+          { t: "Documentary Series", d: "Inside the facility: showcasing precision, scale, and trust.", details: "A multi-part series detailing the journey of coffee processing, humanizing the production line and highlighting ESG criteria.", c: colors.karn.blue },
+          { t: "Viral Short-Form", d: "Attention-grabbing cuts designed for B2B LinkedIn & Reels.", details: "High-retention 15-to-30-second clips of roasting operations or executive soundbites engineered to dominate business feeds.", c: colors.karn.yellow },
+          { t: "Executive Presence", d: "Positioning leadership as industry visionaries.", details: "Ghostwritten thought-leadership and on-camera interviews that position the founders as voices of authority in global commodities.", c: colors.karn.green },
+          { t: "Product Cinematography", d: "Framerates and lighting that elevate coffee to art.", details: "Ultra-high-speed macro shots of beans and crema, creating an irresistible visual standard that rivals luxury brands.", c: colors.karn.purple },
+          { t: "3D Motion Graphics", d: "Visualizing processes and scale beyond physical limits.", details: "Animated diagrams and data-viz showing supply chain reach, processing technology, and logistical superiority.", c: "#ffffff" },
         ].map((item, i) => (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -39,12 +39,28 @@ export default function ContentSlide() {
             transition={{ delay: i * 0.1, duration: 0.5 }}
             viewport={{ once: false, amount: 0.2 }}
             key={i}
-            className="glass-panel rounded-[2rem] p-8 flex flex-col items-start text-left hover:bg-white/5 transition-all group overflow-hidden relative border border-white/5 shadow-xl"
+            className="glass-panel rounded-[2rem] p-8 flex flex-col items-start text-left hover:bg-white/5 transition-all group overflow-hidden relative border border-white/5 shadow-xl min-h-[220px] cursor-pointer"
           >
-            <div className="absolute top-0 right-0 w-24 h-24 opacity-20 group-hover:opacity-40 transition-opacity duration-700 blur-[40px]" style={{ backgroundColor: item.c }}></div>
-            <div className="w-12 h-1 mb-6 rounded-full" style={{ backgroundColor: item.c }}></div>
-            <h4 className="text-2xl font-heading font-medium text-white mb-3 group-hover:translate-x-1 transition-transform">{item.t}</h4>
-            <p className="text-white/50 text-sm leading-relaxed">{item.d}</p>
+            <div className="absolute top-0 right-0 w-32 h-32 opacity-10 group-hover:opacity-20 transition-opacity duration-700 blur-[40px] rounded-bl-full -mr-4 -mt-4" style={{ backgroundColor: item.c }}></div>
+            
+            {/* Default Content */}
+            <div className="flex flex-col h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-8 w-full">
+              <div className="w-12 h-1 mb-6 rounded-full" style={{ backgroundColor: item.c }}></div>
+              <h4 className="text-2xl font-heading font-medium text-white mb-3">{item.t}</h4>
+              <p className="text-white/50 text-sm leading-relaxed">{item.d}</p>
+            </div>
+
+            {/* Hover Details Content */}
+            <div 
+              className="flex flex-col justify-center h-full absolute inset-0 p-8 backdrop-blur-sm opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 w-full"
+              style={{ backgroundColor: `${item.c}10` }}
+            >
+              <div className="flex items-center gap-2 mb-3">
+                 <div className="w-2 h-2 rounded-full" style={{ backgroundColor: item.c }}></div>
+                 <h4 className="text-sm font-medium" style={{ color: item.c }}>{item.t}</h4>
+              </div>
+              <p className="text-white/90 text-sm leading-relaxed">{item.details}</p>
+            </div>
           </motion.div>
         ))}
       </div>

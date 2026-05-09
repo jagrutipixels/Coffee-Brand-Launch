@@ -75,10 +75,10 @@ export default function PrMediaSlide() {
           <div className="w-full h-full relative overflow-hidden rounded-[2.5rem]">
             <img
               src={images.boardroom}
-              className="w-full h-full object-cover filter contrast-125 sepia-[.2] opacity-80 group-hover:scale-110 transition-transform duration-[2s]"
+              className="w-full h-full object-cover filter contrast-110 opacity-90 group-hover:opacity-100 group-hover:scale-110 transition-all duration-[2s]"
             />
-            <div className="absolute inset-0 bg-gradient-to-tr from-[#0d0c0c] via-transparent to-black-matte/40 mix-blend-multiply"></div>
-            <div className="absolute bottom-0 left-0 p-10 w-full bg-gradient-to-t from-[black] via-[black]/80 to-transparent">
+            <div className="absolute inset-0 bg-gradient-to-tr from-[#0d0c0c]/80 via-transparent to-transparent z-10"></div>
+            <div className="absolute bottom-0 left-0 p-10 w-full bg-gradient-to-t from-[black] via-[black]/80 to-transparent z-20">
               <p className="font-heading text-4xl font-light text-white mb-4 tracking-tight">
                 Forbes
               </p>

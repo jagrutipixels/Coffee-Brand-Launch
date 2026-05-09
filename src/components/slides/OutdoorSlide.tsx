@@ -1,6 +1,6 @@
 import React from "react";
 import { motion } from "motion/react";
-import { images, colors } from "@/lib/constants";
+import { colors } from "@/lib/constants";
 
 export default function OutdoorSlide() {
   return (
@@ -21,56 +21,61 @@ export default function OutdoorSlide() {
         </motion.h2>
       </div>
 
-      <motion.div 
-         initial={{ opacity: 0, scale: 0.95 }}
-         whileInView={{ opacity: 1, scale: 1 }}
-         transition={{ duration: 0.8 }}
-         viewport={{ once: false, amount: 0.2 }}
-         className="flex-1 relative w-full rounded-[3rem] overflow-hidden glass-panel group shadow-2xl border border-white/5"
-      >
-        <div className="absolute inset-0 bg-black-matte z-0"></div>
-        <img
-          src={images.billboard}
-          className="relative z-0 w-full h-full object-cover opacity-50 filter contrast-125 sepia-[.3] group-hover:scale-105 group-hover:opacity-70 transition-all duration-[2s]"
-        />
-        <div className="absolute inset-0 z-10 bg-gradient-to-t from-black-matte via-black-matte/50 to-transparent"></div>
-        
-        <div className="absolute inset-x-0 bottom-0 p-8 md:p-12 z-20">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
-            {[
-              {
-                t: "Airport Terminals",
-                d: "Capturing high-net-worth B2B traffic in domestic & international hubs.",
-                c: colors.karn.blue
-              },
-              { t: "Strategic OOH", d: "Commanding urban placement in commercial manufacturing zones.", c: colors.karn.red },
-              {
-                t: "Financial Districts",
-                d: "Positioning alongside multinational banks & trading houses.",
-                c: colors.karn.yellow
-              },
-              { t: "Expo Dominance", d: "Buying out physical airspace around tier-1 trade events.", c: colors.karn.green },
-            ].map((item, i) => (
-              <motion.div 
-                key={i}
-                initial={{ opacity: 0, y: 20 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                transition={{ delay: 0.3 + (i * 0.1) }}
-                className="relative"
-              >
-                <div
-                  className="w-12 h-1.5 mb-6 rounded-full shadow-[0_0_10px_currentColor]"
-                  style={{ backgroundColor: item.c, color: item.c }}
-                ></div>
-                <h4 className="text-xl font-heading font-medium text-white mb-3">
-                  {item.t}
-                </h4>
-                <p className="text-white/50 text-sm leading-relaxed">{item.d}</p>
-              </motion.div>
-            ))}
-          </div>
+      <div className="flex-1 w-full max-w-6xl mx-auto flex items-center justify-center">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 w-full">
+          {[
+            {
+              t: "Airport Terminals",
+              d: "Capturing high-net-worth B2B traffic in domestic & international hubs with dynamic digital displays.",
+              c: colors.karn.blue,
+              metric: "Global Hubs"
+            },
+            { 
+              t: "Strategic OOH", 
+              d: "Commanding urban placement in commercial and heavy manufacturing zones for omnipresence.", 
+              c: colors.karn.red,
+              metric: "Industrial Zones"
+            },
+            {
+              t: "Financial Districts",
+              d: "Positioning alongside multinational banks, trading houses, and capital hubs to attract institutional trust.",
+              c: colors.karn.yellow,
+              metric: "CBD Dominance"
+            },
+            { 
+              t: "Expo Dominance", 
+              d: "Buying out physical airspace and high-traffic corridors around tier-1 global trade events.", 
+              c: colors.karn.green,
+              metric: "Trade Fairs"
+            },
+          ].map((item, i) => (
+            <motion.div 
+               key={i}
+               initial={{ opacity: 0, scale: 0.95, y: 20 }}
+               whileInView={{ opacity: 1, scale: 1, y: 0 }}
+               transition={{ delay: 0.2 + (i * 0.1), duration: 0.5 }}
+               className="glass-panel p-8 md:p-10 rounded-[2.5rem] border border-white/5 relative overflow-hidden group shadow-2xl flex flex-col justify-between min-h-[240px]"
+            >
+              <div className="absolute top-0 right-0 w-48 h-48 opacity-10 group-hover:opacity-20 blur-[50px] transition-opacity duration-700 pointer-events-none" style={{ backgroundColor: item.c }}></div>
+              <div className="absolute left-0 top-0 w-1.5 h-full opacity-50 group-hover:opacity-100 transition-opacity" style={{ backgroundColor: item.c }}></div>
+
+              <div className="relative z-10 flex items-center justify-between mb-8">
+                 <div className="flex items-center gap-4">
+                    <div className="w-3 h-3 rounded-full shadow-[0_0_12px_currentColor]" style={{ backgroundColor: item.c, color: item.c }}></div>
+                    <h4 className="text-2xl font-heading font-medium text-white">{item.t}</h4>
+                 </div>
+                 <div className="px-3 py-1 rounded-full border border-white/10 text-white/40 text-xs font-mono tracking-wider uppercase bg-black-matte/40 group-hover:bg-white/5 group-hover:text-white/80 transition-colors">
+                    {item.metric}
+                 </div>
+              </div>
+
+              <p className="text-white/60 text-base leading-relaxed relative z-10 max-w-md">
+                {item.d}
+              </p>
+            </motion.div>
+          ))}
         </div>
-      </motion.div>
+      </div>
     </div>
   );
 }

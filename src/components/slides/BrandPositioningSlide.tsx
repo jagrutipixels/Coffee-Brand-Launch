@@ -55,14 +55,13 @@ export default function BrandPositioningSlide() {
           transition={{ duration: 1 }}
           className="h-[50vh] lg:h-[70vh] rounded-[3rem] overflow-hidden relative border border-white/5 shadow-2xl group order-1 lg:order-2"
         >
-          <img src={images.espresso} className="w-full h-full object-cover opacity-60 group-hover:scale-110 transition-transform duration-[3s] ease-out filter sepia-[0.3] contrast-125" />
-          <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/40 to-transparent mix-blend-multiply"></div>
-          <div className="absolute inset-0 bg-gradient-to-tr from-[#0d0c0c] via-transparent to-transparent"></div>
+          <img src={images.espresso} className="w-full h-full object-cover opacity-80 group-hover:opacity-100 group-hover:scale-105 transition-all duration-[3s] ease-out filter contrast-110" />
+          <div className="absolute inset-0 bg-gradient-to-t from-black-matte via-black-matte/30 to-transparent"></div>
           
           <div className="absolute bottom-12 left-12 z-20">
              <div className="w-12 h-[3px] bg-karn-red mb-6 shadow-[0_0_10px_#DC2626]"></div>
              <p className="text-white text-4xl font-heading tracking-tight mb-2 block font-medium">Quality at Scale.</p>
-             <p className="text-white/50 tracking-widest text-xs uppercase font-medium">Integrity in every batch</p>
+             <p className="text-white/80 tracking-widest text-xs uppercase font-medium">Integrity in every batch</p>
           </div>
         </motion.div>
       </div>

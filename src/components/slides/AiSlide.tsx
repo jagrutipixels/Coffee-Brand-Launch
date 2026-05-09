@@ -29,11 +29,11 @@ export default function AiSlide() {
 
       <div className="relative z-10 grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4 lg:gap-6 max-w-7xl w-full">
         {[
-          { t: "AI Sales Desk", d: "24/7 lead qualification", c: colors.karn.blue },
-          { t: "Predictive Analytics", d: "Data-driven forecasting", c: colors.karn.purple },
-          { t: "Automated CRM", d: "Zero-latency follow-ups", c: colors.karn.yellow },
-          { t: "Media Intelligence", d: "Algorithmic ad bidding", c: colors.karn.red },
-          { t: "Market Monitoring", d: "Real-time competitor tracking", c: colors.karn.green },
+          { t: "AI Sales Desk", d: "24/7 lead qualification", details: "Autonomous agents responding to inbound wholesale queries.", c: colors.karn.blue },
+          { t: "Predictive Analytics", d: "Data-driven forecasting", details: "Forecasting global coffee price fluctuations and yields.", c: colors.karn.purple },
+          { t: "Automated CRM", d: "Zero-latency follow-ups", details: "Instantaneous onboarding ensuring leads never grow cold.", c: colors.karn.yellow },
+          { t: "Media Intelligence", d: "Algorithmic ad bidding", details: "Machine-learning optimization of ad budgets.", c: colors.karn.red },
+          { t: "Market Monitoring", d: "Real-time competitor tracking", details: "Scraping competitor pricing and digital footprint changes.", c: colors.karn.green },
         ].map((item, i) => (
           <motion.div
             initial={{ opacity: 0, y: 30 }}
@@ -41,17 +41,30 @@ export default function AiSlide() {
             transition={{ delay: i * 0.1, duration: 0.5 }}
             viewport={{ once: false, amount: 0.2 }}
             key={i}
-            className={`glass-panel p-6 rounded-[2rem] border border-white/5 flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-all overflow-hidden relative ${i === 4 ? 'col-span-2 sm:col-span-1 sm:col-start-2 lg:col-span-1 lg:col-start-auto' : ''}`}
+            className={`glass-panel p-6 rounded-[2rem] border border-white/5 flex flex-col items-center justify-center text-center group hover:bg-white/5 transition-all overflow-hidden relative min-h-[200px] cursor-pointer ${i === 4 ? 'col-span-2 sm:col-span-1 sm:col-start-2 lg:col-span-1 lg:col-start-auto' : ''}`}
           >
             <div className="absolute inset-0 opacity-0 group-hover:opacity-10 transition-opacity blur-[20px]" style={{ backgroundColor: item.c }}></div>
-            <div
-              className="w-4 h-4 rounded-full mb-6 relative"
-              style={{ backgroundColor: item.c, boxShadow: `0 0 20px ${item.c}` }}
-            >
-              <div className="absolute inset-0 rounded-full animate-ping opacity-50 block" style={{ backgroundColor: item.c }}></div>
+            
+            {/* Default Content */}
+            <div className="flex flex-col items-center justify-center h-full transform transition-transform duration-500 group-hover:-translate-y-full absolute inset-0 p-6 w-full">
+              <div
+                className="w-4 h-4 rounded-full mb-6 relative"
+                style={{ backgroundColor: item.c, boxShadow: `0 0 20px ${item.c}` }}
+              >
+                <div className="absolute inset-0 rounded-full animate-ping opacity-50 block" style={{ backgroundColor: item.c }}></div>
+              </div>
+              <h4 className="text-lg font-heading font-medium text-white mb-2">{item.t}</h4>
+              <p className="text-xs text-white/50">{item.d}</p>
             </div>
-            <h4 className="text-lg font-heading font-medium text-white mb-2">{item.t}</h4>
-            <p className="text-xs text-white/50">{item.d}</p>
+
+            {/* Hover Details Content */}
+            <div 
+              className="flex flex-col justify-center items-center h-full absolute inset-0 p-6 backdrop-blur-sm opacity-0 translate-y-full group-hover:translate-y-0 group-hover:opacity-100 transition-all duration-500 w-full"
+              style={{ backgroundColor: `${item.c}10` }}
+            >
+              <h4 className="text-sm font-medium mb-2" style={{ color: item.c }}>{item.t}</h4>
+              <p className="text-white/90 text-sm leading-relaxed">{item.details}</p>
+            </div>
           </motion.div>
         ))}
       </div>
